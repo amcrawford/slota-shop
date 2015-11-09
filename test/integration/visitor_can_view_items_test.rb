@@ -6,7 +6,7 @@ class VisitorCanViewItemsTest < ActionDispatch::IntegrationTest
     item_2 = create_chip("Trader Joe's BBQ", 15, "I'd trade slota for these!")
     item_3 = create_chip("Dang Coconut", 17, "Dang, these are good")
 
-    visit '/items'
+    visit '/chips'
 
     within(".chips") do
       assert page.has_content?("Slotachips")
