@@ -19,6 +19,6 @@ class ActionDispatch::IntegrationTest
   end
 
   def create_chip(name, price, description)
-    Chip.create(name: name, price: price, description: description)
+    Item.create(name: name, price: price, description: description)
   end
 end
