@@ -48,4 +48,6 @@ class VisitorCanViewItemsTest < ActionDispatch::IntegrationTest
       assert page.has_content?("Dang Coconut")
     end
   end
+
+  
 end

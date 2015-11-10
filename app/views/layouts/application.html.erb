@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <%= link_to Cart, cart_chips_path %> (<%= @cart.total %>) 
+  </nav>
+<% flash.each do |type, msg| %>
+<p>
+  <%= content_tag :div, msg %>
+</p>
+<% end %>
+
 
 <%= yield %>
 
