@@ -2,6 +2,6 @@
 
 <div class="categories">
   <% @oil_types.each do |oil_type| %>
-    <%= link_to oil_type.name, oil_name_path(oil_type.name_id) %>
+    <%= link_to oil_type.name, oil_name_path(oil_type.name_id) %><br>
   <% end %>
 </div>
