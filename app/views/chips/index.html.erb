@@ -2,6 +2,10 @@
 
 <div class="chips">
   <% @chips.each do |chip| %>
+  <div id= <%= "#{chip.name.downcase}"%>>
     <%= chip.name %><br>
+    <%= button_to "Add to Cart", cart_chips_path(chip_id: chip.id) %>
+  </div>
+
   <% end %>
 </div>

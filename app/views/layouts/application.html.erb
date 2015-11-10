@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    View Cart (0)
+  </nav>
+<% flash.each do |type, msg| %>
+<p>
+  <%= content_tag :div, msg %>
+</p>
+<% end %>
+
 
 <%= yield %>
 
