@@ -22,16 +22,17 @@ ActiveRecord::Schema.define(version: 20151110001844) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "oil_type_id"
+    t.integer  "oil_id"
   end
 
-  add_index "chips", ["oil_type_id"], name: "index_chips_on_oil_type_id", using: :btree
+  add_index "chips", ["oil_id"], name: "index_chips_on_oil_id", using: :btree
 
-  create_table "oil_types", force: :cascade do |t|
+  create_table "oils", force: :cascade do |t|
     t.string   "name"
+    t.string   "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "chips", "oil_types"
+  add_foreign_key "chips", "oils"
 end

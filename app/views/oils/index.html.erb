@@ -1,0 +1,7 @@
+<h2>Oil Types</h2>
+
+<div class="categories">
+  <% @oils.each do |oil| %>
+    <%= link_to oil.name, oil_name_path(oil.slug) %><br>
+  <% end %>
+</div>
