@@ -1,0 +1,5 @@
+<div class="chips">
+  <% @oil_types.each do |oil_type| %>
+    <%= link_to oil_type.name, oil_type_path(oil_type) %>
+  <% end %>
+</div>
