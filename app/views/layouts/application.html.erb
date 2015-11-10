@@ -8,7 +8,7 @@
 </head>
 <body>
   <nav>
-    View Cart (0)
+    <%= link_to Cart, cart_chips_path %> (<%= @cart.total %>) 
   </nav>
 <% flash.each do |type, msg| %>
 <p>

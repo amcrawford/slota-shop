@@ -13,16 +13,16 @@ class VisitorCanAddItemsToCart < ActionDispatch::IntegrationTest
 
     visit chips_path
 
-    assert page.has_content?("View Cart (0)")
+    assert page.has_content?("Cart (0)")
 
     within("#slotachips") do
       click_button "Add to Cart"
     end
 
     assert page.has_content?("Added Slotachips to cart.")
-    assert page.has_content?("View Cart (1)")
+    assert page.has_content?("Cart (1)")
 
-    click_link "View Cart"
+    click_link "Cart"
 
     assert_equal cart_chips_path, current_path
 
