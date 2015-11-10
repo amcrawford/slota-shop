@@ -1,7 +1,18 @@
 <h2>Oil Types</h2>
 
 <div class="categories">
-  <% @oil_types.each do |oil_type| %>
-    <%= link_to oil_type.name, oil_name_path(oil_type.name_id) %><br>
+  <div class="row">
+    <% @oil_types.each do |oil_type| %>
+    <div class="col m3">
+      <div class="card" id="<%=oil_type.name.downcase%>">
+        <div class="card-image">
+          <img src="images/sample-1.jpg">
+        </div>
+        <div class="card-content">
+          <h5> <%= link_to oil_type.name, oil_name_path(oil_type.name_id) %></h5>
+        </div>
+      </div>
+    </div>
   <% end %>
+  </div>
 </div>

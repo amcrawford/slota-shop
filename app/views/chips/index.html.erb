@@ -1,7 +1,20 @@
 <h2>Chips</h2>
 
 <div class="chips">
-  <% @chips.each do |chip| %>
-    <%= chip.name %><br>
-  <% end %>
+  <div class="row">
+    <% @chips.each do |chip| %>
+      <div class="col m3">
+        <div class="card">
+          <div class="card-image">
+            <img src="images/sample-1.jpg">
+          </div>
+          <div class="card-content">
+            <h5><%= chip.name %></h5>
+              <p><%= chip.description %></p>
+              <p>$<%= chip.price %></p>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

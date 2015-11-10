@@ -7,8 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="teal lighten-2 ">
+    <div class="nav-wrapper">
+      <ul id="dropdown1" class="dropdown-content">
+        <% OilType.all.each do |oil| %>
+        <li><%= link_to oil.name, oil_type_path(oil) %></li>
+        <% end %>
+      </ul>
+      <li class="brand-logo"> Slota's Chips </li>
+      <ul class="right hide-on-med-and-down">
+        <li> <%= link_to "Our Story" %> </li>
+        <li> <%= link_to "Shop Our Chips", chips_path %> </li>
+        <li class="dropdown-button" data-activates="dropdown1"> Shop by Oil </li>
+    </div>
+  </nav>
 
-<%= yield %>
+  <% flash.each do |type, msg| %>
+    <p>
+      <%= content_tag :div, msg %>
+    </p>
+  <% end %>
 
+  <div class="container">
+    <%= yield %>
+  </div>
+
+  <!-- <footer class="page-footer teal lighten-2">
+    <ul class="right hide-on-med-and-down">
+      <li>Contact Us</li>
+    </ul>
+  </footer> -->
 </body>
 </html>
