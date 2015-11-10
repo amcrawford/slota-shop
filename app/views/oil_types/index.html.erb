@@ -1,5 +1,5 @@
-<div class="chips">
+<div class="categories">
   <% @oil_types.each do |oil_type| %>
-    <%= link_to oil_type.name, oil_type_path(oil_type) %>
+    <%= link_to oil_type.name, oil_type_path(oil_type.name_id) %>
   <% end %>
 </div>
