@@ -6,6 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-OilType.create!([{name: "Lard"}, {name: "Coconut Oil"}])
+Oil.create!([{name: "Lard"}, {name: "Coconut Oil"}])
 
-Chip.create!([{name: "Slotachips", price: 20, description: "Super yummy", oil_type_id: 1}, {name: "Trader Joe's BBQ", price: 15, description: "I'd trade slota for these!", oil_type_id: 2}, {name: "Dang Coconut", price: 17, description: "Dang, these are good", oil_type_id: 2}, {name: "Lard Yummies", price: 19, description: "Chock Full of Lard", oil_type_id: 1}])
+Chip.create!([{name: "Slotachips", price: 20, description: "Super yummy", oil_id: 1}, {name: "Trader Joe's BBQ", price: 15, description: "I'd trade slota for these!", oil_id: 2}, {name: "Dang Coconut", price: 17, description: "Dang, these are good", oil_id: 2}, {name: "Lard Yummies", price: 19, description: "Chock Full of Lard", oil_id: 1}])

@@ -1,8 +1,22 @@
 <h2> <%= @oil.name %> </h2>
 
 <div class="chips">
+  <div class="row">
   <% @chips.each do |chip| %>
-    <%= chip.name %><br>
+  <div class="col m3">
+    <div class="card">
+      <div class="card-image">
+        <img src="images/sample-1.jpg">
+      </div>
+      <div class="card-content">
+        <h5><%= chip.name %></h5>
+          <p><%= chip.description %></p>
+          <p>$<%= chip.price %></p>
+        </div>
+    </div>
+  </div>
   <% end %>
 </div>
-<%= link_to "Return to oils", oils_path %>
+  <a class="waves-effect waves-light btn"
+    <%= link_to "Return to oils", oils_path %>
+  </a>

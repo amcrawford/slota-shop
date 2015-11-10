@@ -1,11 +1,21 @@
 <h2>Chips</h2>
 
 <div class="chips">
-  <% @chips.each do |chip| %>
-  <div id= <%= "#{chip.name.downcase}"%>>
-    <%= chip.name %><br>
-    <%= button_to "Add to Cart", cart_chips_path(chip_id: chip.id) %>
+  <div class="row">
+    <% @chips.each do |chip| %>
+      <div class="col m3">
+        <div class="card">
+          <div class="card-image">
+            <img src="images/sample-1.jpg">
+          </div>
+          <div class="card-content" id= <%= "#{chip.name.downcase}"%>>
+            <h5><%= chip.name %></h5>
+              <p><%= chip.description %></p>
+              <p>$<%= chip.price %></p>
+              <p><%= button_to "Add to Cart", cart_chips_path(chip_id: chip.id) %></p>
+            </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <% end %>
 </div>

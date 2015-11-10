@@ -28,7 +28,9 @@ class VisitorCanViewItemsTest < ActionDispatch::IntegrationTest
 
     visit oils_path
 
-    click_link "Lard"
+    within("#lard") do
+      click_link "Lard"
+    end
 
     assert current_path, '/oils/lard'
 
@@ -39,7 +41,9 @@ class VisitorCanViewItemsTest < ActionDispatch::IntegrationTest
 
     click_link "Return to oils"
 
-    click_link "Coconut Oil"
+    within("#coconut-oil") do
+      click_link "Coconut Oil"
+    end
 
     assert current_path, '/oils/coconut-oil'
 
@@ -48,6 +52,4 @@ class VisitorCanViewItemsTest < ActionDispatch::IntegrationTest
       assert page.has_content?("Dang Coconut")
     end
   end
-
-  
 end
