@@ -25,9 +25,11 @@ class VisitorCanViewItemsTest < ActionDispatch::IntegrationTest
     item_3 = Chip.create(name: "Dang Coconut", price: 17, description: "Dang, these are good", oil_type_id: category_2.id)
     item_4 = Chip.create(name: "Lard Yummies", price: 19, description: "Chock Full of Lard", oil_type_id: category_1.id)
 
-    visit '/oil_types'
+    visit oil_types_path
 
     click_link "Lard"
+
+    assert current_path, '/oil_types/lard'
 
     within(".chips") do
       assert page.has_content?("Slotachips")
@@ -37,6 +39,8 @@ class VisitorCanViewItemsTest < ActionDispatch::IntegrationTest
     click_link "Return to oil types"
 
     click_link "Coconut Oil"
+
+    assert current_path, '/oil_types/coconut_oil'
 
     within(".chips") do
       assert page.has_content?("Trader Joe's BBQ")
