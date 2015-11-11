@@ -8,10 +8,11 @@
       <div class="card-image">
         <img src="images/sample-1.jpg">
       </div>
-      <div class="card-content">
+      <div class="card-content" id= <%= "#{chip.slug}"%>>
         <h5><%= chip.name %></h5>
           <p><%= chip.description %></p>
           <p>$<%= chip.price %></p>
+          <p><%= button_to "Add to Cart", cart_chips_path(chip_id: chip.id) %></p>
         </div>
     </div>
   </div>

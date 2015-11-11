@@ -11,5 +11,6 @@ class CartChipsController < ApplicationController
 
   def index
     @chips = CartChip.find_chips(@cart.contents)
+    @total = CartChip.find_total(@chips)
   end
 end

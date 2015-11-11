@@ -1,6 +1,6 @@
-<% @chips.each do |chip| %>
-  <%= chip.name %> <br>
-  <%= chip.price %> <br>
-  <%= chip.description %>
+<% @chips.each do |chip, quantity| %>
+  <%= chip.name %> (<%= quantity %>)<br>
+  Price: $<%= chip.price %> <br>
+  <%= chip.description %><br>
 <% end %>
-Total: $20
+Total: $<%= @total %>
