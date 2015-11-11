@@ -9,15 +9,16 @@
       </div>
     </div>
     <div class = "col m9" id="<%= chip.slug %>">
-      <h5><%= chip.name %> (<%= quantity %>)</h5><br>
-      <%= chip.description %><br><br>
-      Price: $<%= chip.price %> <br><br>
+      <h5><%= chip.name %></h5>
+      <span class="quantity">(<%= quantity %>)</span><%= button_to "+", cart_chip_path(chip.id, edit_action: "add"), method: :patch %>
+      <%= button_to "-", cart_chip_path(chip.id, edit_action: "subtract"), method: :patch %><br>
+      <span class="price">Price: $<%= chip.price %> x <%= quantity %> = <%= @chips_total[chip.id] %></span> <br>
+      <%= chip.description %><br>
       <%= link_to "Remove", cart_chip_path(chip.id), method: :delete %>
     </div>
   </div>
   <% end %>
 </div>
 
-
-Total: $<%= @total %><br><br>
+<span class="cart_total">Total: $<%= @cart_total %></span>
 <%= link_to "Keep Shopping", chips_path %>
