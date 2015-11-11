@@ -10,23 +10,27 @@ class VisitorCanEditCartTest < ActionDispatch::IntegrationTest
     item_3 = Chip.create(name: "Dang Coconut", price: 17, description: "Dang, these are good", oil_id: category_2.id)
     item_4 = Chip.create(name: "Lard Yummies", price: 19, description: "Chock Full of Lard", oil_id: category_1.id)
 
-    visit '/cart'
+    visit chips_path
 
-    within('.slotachips') do
-      clink_link "Remove"
+    within("#slotachips") do
+      click_button "Add to Cart"
     end
 
-    assert_equal '/cart', current_path
+    visit cart_chips_path
+
+    within('#slotachips') do
+      click_link "Remove"
+    end
+
+    assert_equal cart_chips_path, current_path
 
     assert page.has_content?("Successfully removed Slotachips from your cart.")
 
-    within('#chips') do
+    within('.chips') do
       refute page.has_content?("Slotachips")
     end
 
-    clink_link "Slotachips"
-    assert_equal '/slotachips', current_path
-
-
+    click_link "Slotachips"
+    assert_equal '/chips/slotachips', current_path
   end
 end

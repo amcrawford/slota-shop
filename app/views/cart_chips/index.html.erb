@@ -1,8 +1,12 @@
-<% @chips.each do |chip, quantity| %>
-  <div class="chips">
-    <p id="chip.slug"><%= chip.name %> (<%= quantity %>)</p>
-    Price: $<%= chip.price %> <br>
-    <%= chip.description %><br>
-  </div>
-<% end %>
+<div class="chips">
+  <% @chips.each do |chip, quantity| %>
+    <div id="<%= chip.slug %>">
+      <%= chip.name %> (<%= quantity %>)<br>
+      Price: $<%= chip.price %> <br>
+      <%= chip.description %><br>
+      <%= link_to "Remove", cart_chip_path(chip.id), method: :delete %>
+    </div>
+  <% end %>
+</div>
+
 Total: $<%= @total %>
