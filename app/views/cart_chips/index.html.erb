@@ -1,12 +1,14 @@
 <div class="chips">
   <% @chips.each do |chip, quantity| %>
     <div id="<%= chip.slug %>">
-      <%= chip.name %> (<%= quantity %>)<br>
-      Price: $<%= chip.price %> <br>
+      <%= chip.name %><br />
+      <span class="quantity">(<%= quantity %>)</span><%= button_to "+", cart_chip_path(chip.id, edit_action: "add"), method: :patch %>
+      <%= button_to "-", cart_chip_path(chip.id, edit_action: "subtract"), method: :patch %><br>
+      <span class="price">Price: $<%= chip.price %> x <%= quantity %> = <%= @chips_total[chip.id] %></span> <br>
       <%= chip.description %><br>
       <%= link_to "Remove", cart_chip_path(chip.id), method: :delete %>
     </div>
   <% end %>
 </div>
 
-Total: $<%= @total %>
+<span class="cart_total">Total: $<%= @cart_total %></span>

@@ -11,7 +11,21 @@ class CartChipsController < ApplicationController
 
   def index
     @chips = CartChip.find_chips(@cart.contents)
-    @total = CartChip.find_total(@chips)
+    @chips_total = CartChip.chips_total(@chips)
+    @cart_total = CartChip.find_total(@chips)
+  end
+
+  def update
+    chip = Chip.find(params[:id])
+    if params[:edit_action] == "add"
+      @cart.add_chip(chip.id)
+    else
+      @cart.subtract_chip(chip.id)
+    end
+    @chips = CartChip.find_chips(@cart.contents)
+    @chips_total = CartChip.chips_total(@chips)
+    @cart_total = CartChip.find_total(@chips)
+    redirect_to cart_chips_path
   end
 
   def destroy

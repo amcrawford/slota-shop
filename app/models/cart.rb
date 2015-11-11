@@ -10,6 +10,11 @@ class Cart
     contents[chip_id.to_s] += 1
   end
 
+  def subtract_chip(chip_id)
+    contents[chip_id.to_s] ||= 0
+    contents[chip_id.to_s] -= 1
+  end
+
   def total
     @contents.values.sum
   end
