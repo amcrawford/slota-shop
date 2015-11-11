@@ -1,0 +1,4 @@
+<b><%= chip.name %></b>
+<p><%= number_to_currency chip.price %></p>
+<p><%= button_to "Add to Cart", cart_chips_path(chip_id: chip.id) %></p>
+<p><%= chip.description_type(source) %></p>

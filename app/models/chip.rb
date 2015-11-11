@@ -11,4 +11,14 @@ class Chip < ActiveRecord::Base
   def set_slug
     self.slug = name.downcase.gsub(" ", "-")
   end
+
+  def description_type(source)
+    if source == "index"
+      nil
+    elsif source == "show"
+      chip.description
+    else
+      chip.description
+    end
+  end
 end
