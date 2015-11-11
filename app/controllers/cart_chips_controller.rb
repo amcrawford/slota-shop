@@ -17,7 +17,7 @@ class CartChipsController < ApplicationController
   def destroy
     chip = Chip.find(params[:id])
     @cart.contents.delete(params[:id])
-    flash[:notice] = "Successfully removed #{view_context.link_to(chip.name, chip_path(chip.slug))} from your cart."
+    flash[:notice] = "<span style='color: green'>Successfully removed #{view_context.link_to(chip.name, chip_path(chip.slug))} from your cart.</span>"
     redirect_to cart_chips_path
   end
 end
