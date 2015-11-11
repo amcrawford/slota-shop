@@ -1,0 +1,19 @@
+<nav class="black">
+  <div class="nav-wrapper">
+    <ul id="dropdown1" class="dropdown-content">
+      <%= render oils %>
+    </ul>
+    <li class="brand-logo"><img class="logo-image" src="/assets/Tailor_Brands.png"> </li>
+    <ul class="right hide-on-med-and-down">
+      <li> <%= link_to "Our Story" %> </li>
+      <li> <%= link_to "Shop Our Chips", chips_path %> </li>
+      <li class="dropdown-button" data-activates="dropdown1"> Shop by Oil </li>
+      <li><%= link_to "Cart (#{@cart.total})", cart_chips_path %> </li>
+      <% if current_user %>
+        <li><%= link_to "Logout", logout_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Login", login_path %></li>
+        <li><%= link_to "Create Account", new_user_path %></li>
+      <% end %>
+  </div>
+</nav>

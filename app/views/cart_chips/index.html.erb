@@ -12,7 +12,7 @@
       <h5><%= chip.name %></h5>
       <span class="quantity">(<%= quantity %>)</span><%= button_to "+", cart_chip_path(chip.id, edit_action: "add"), method: :patch %>
       <%= button_to "-", cart_chip_path(chip.id, edit_action: "subtract"), method: :patch %><br>
-      <span class="price">Price: $<%= chip.price %> x <%= quantity %> = <%= @chips_total[chip.id] %></span> <br>
+      <span class="price">Price: <%= number_to_currency chip.price %> x <%= quantity %> = <%= number_to_currency @chips_total[chip.id] %></span> <br>
       <%= chip.description %><br>
       <%= link_to "Remove", cart_chip_path(chip.id), method: :delete %>
     </div>
@@ -20,5 +20,5 @@
   <% end %>
 </div>
 
-<span class="cart_total">Total: $<%= @cart_total %></span>
+<span class="cart_total">Total: <%= number_to_currency @cart_total%></span>
 <%= link_to "Keep Shopping", chips_path %>
