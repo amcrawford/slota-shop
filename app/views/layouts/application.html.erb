@@ -26,7 +26,7 @@
 
   <% flash.each do |type, msg| %>
     <p>
-      <%= content_tag :div, msg %>
+      <%= content_tag :div, msg.html_safe %>
     </p>
   <% end %>
 
