@@ -3,14 +3,13 @@
 <div class="chips">
   <div class="row">
   <% @chips.each do |chip| %>
-  <div class="col m3">
-    <div class="card">
+  <div class="col m4">
+    <div class="card medium">
       <div class="card-image">
-        <img src="<%= chip.image_file_name %>" >
+        <img id="chip-picture" src="<%= chip.image_file_name %>" >
       </div>
       <div class="card-content" id= <%= "#{chip.slug}"%>>
         <h5><%= chip.name %></h5>
-          <p><%= chip.description %></p>
           <p>$<%= chip.price %></p>
           <p><%= button_to "Add to Cart", cart_chips_path(chip_id: chip.id) %></p>
         </div>
