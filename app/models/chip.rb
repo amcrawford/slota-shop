@@ -1,6 +1,8 @@
 class Chip < ActiveRecord::Base
   belongs_to :oil_type
   before_save :set_slug
+  has_attached_file :image
+  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
 
   def to_param
     slug
