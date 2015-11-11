@@ -104,4 +104,50 @@ class VisitorCanAddItemsToCart < ActionDispatch::IntegrationTest
     assert page.has_content?("Super yummy")
     assert page.has_content?("Total: $20")
   end
+
+  test "user can adjust the quantity of an item in the cart" do
+    SET UP A CART WITH SOMEHTING IN IT
+    visit "/cart"
+
+    within ('.slotachips') do
+      assert page.has_content?("Slotachips")
+      within ('#quantity') do
+        assert page.has_content?("1")
+      end
+    end
+
+    click_link "+"
+
+    assert_equal cart_chips_path, current_path
+
+    within ('.slotachips') do
+      within ('#quantity') do
+        assert page.has_content?("2")
+      end
+      within ('#price') do
+        assert page.has_content?("40")
+      end
+    end
+
+    within ('#cart_total') do
+      assert page.has_content?("Total: $40")
+    end
+
+    click_link "-"
+
+    assert_equal cart_chips_path, current_path
+
+    within ('.slotachips') do
+      within ('#quantity') do
+        assert page.has_content?("1")
+      end
+      within ('#price') do
+        assert page.has_content?("20")
+      end
+    end
+
+    within ('#cart_total') do
+      assert page.has_content?("Total: $20")
+    end
+  end
 end
