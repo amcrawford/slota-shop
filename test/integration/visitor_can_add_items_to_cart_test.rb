@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class VisitorCanAddItemsToCart < ActionDispatch::IntegrationTest
+class VisitorCanAddItemsToCartTest < ActionDispatch::IntegrationTest
 
   test "visitor can add items to cart from index" do
     category_1 = Oil.create(name: "Lard")
