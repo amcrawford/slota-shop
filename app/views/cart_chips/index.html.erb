@@ -1,6 +1,8 @@
 <% @chips.each do |chip, quantity| %>
-  <%= chip.name %> (<%= quantity %>)<br>
-  Price: $<%= chip.price %> <br>
-  <%= chip.description %><br>
+  <div class="chips">
+    <p id="chip.slug"><%= chip.name %> (<%= quantity %>)</p>
+    Price: $<%= chip.price %> <br>
+    <%= chip.description %><br>
+  </div>
 <% end %>
 Total: $<%= @total %>
