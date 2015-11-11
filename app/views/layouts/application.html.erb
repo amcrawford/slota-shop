@@ -11,7 +11,7 @@
   <nav class="black">
     <div class="nav-wrapper">
       <ul id="dropdown1" class="dropdown-content">
-        <% Oil.all.each do |oil| %>
+        <% oils.each do |oil| %>
         <li><%= link_to oil.name, oil_path(oil) %></li>
         <% end %>
       </ul>

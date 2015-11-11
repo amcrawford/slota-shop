@@ -4,6 +4,5 @@ class ChipsController < ApplicationController
   end
 
   def show
-
   end
 end
