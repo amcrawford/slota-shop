@@ -38,6 +38,6 @@ Chip.create!([
   ])
 
 
-  User.create!([{username: "User", password: "Password"}, {username: "Admin", password: "Password"}])
+  User.create!([{username: "User", password: "Password"}, {username: "Admin", password: "Password", role: 1}])
   Order.create!([{total_price: 20, user_id: 1}])
   ChipOrder.create!([{chip_id: 1, quantity: 1, subtotal: 20, order_id: 1}])
