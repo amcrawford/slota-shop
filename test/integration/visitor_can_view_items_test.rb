@@ -32,7 +32,7 @@ class VisitorCanViewItemsTest < ActionDispatch::IntegrationTest
       click_link "Lard"
     end
 
-    assert current_path, '/oils/lard'
+    assert current_path, '/lard'
 
     within(".chips") do
       assert page.has_content?("Slotachips")
@@ -45,7 +45,7 @@ class VisitorCanViewItemsTest < ActionDispatch::IntegrationTest
       click_link "Coconut Oil"
     end
 
-    assert current_path, '/oils/coconut-oil'
+    assert current_path, '/coconut-oil'
 
     within(".chips") do
       assert page.has_content?("Trader Joe's BBQ")

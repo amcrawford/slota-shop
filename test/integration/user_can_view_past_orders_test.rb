@@ -17,7 +17,7 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
 
     click_button "Login"
 
-    visit user_orders_path(user.id)
+    visit orders_path(user.id)
 
     assert page.has_content?("Ordered On: #{order.created_at.strftime("%B %d, %Y")}")
   end
@@ -38,7 +38,7 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
 
     click_button "Login"
 
-    visit user_orders_path(user.id)
+    visit orders_path(user.id)
 
     click_link "View Order Details"
     within(".chips_ordered") do

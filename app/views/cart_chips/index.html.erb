@@ -22,7 +22,7 @@
 
 <span class="cart_total">Total: <%= number_to_currency @cart_total%></span>
 <% if current_user %>
-  <%= button_to "Place Order", user_orders_path(current_user, cart_total: @cart_total) %>
+  <%= button_to "Place Order", orders_path(cart_total: @cart_total) %>
 <% else %>
    <!-- #something else -->
 <% end %>

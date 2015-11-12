@@ -38,7 +38,7 @@ class ActionDispatch::IntegrationTest
 
     click_button "Login"
 
-    visit user_orders_path(user.id)
+    visit orders_path
     click_link("View Order Details")
   end
 end
