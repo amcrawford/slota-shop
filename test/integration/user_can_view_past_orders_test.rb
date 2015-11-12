@@ -41,7 +41,6 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
     visit user_orders_path(user.id)
 
     click_link "View Order Details"
-save_and_open_page
     within(".chips_ordered") do
       assert page.has_content?("Slotachips")
       assert page.has_content?("1")

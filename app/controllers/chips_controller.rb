@@ -4,5 +4,6 @@ class ChipsController < ApplicationController
   end
 
   def show
+    @chip = Chip.find_by(slug: params[:id])
   end
 end
