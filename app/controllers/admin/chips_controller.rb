@@ -11,13 +11,13 @@ class Admin::ChipsController < Admin::BaseController
   end
 
   def update
-    @chip = Chip.new(chip_params)
-    if @chip.save
-      flash[:notice] = "Successfully Created Chip"
+    @chip = Chip.find(params[:id])
+    if @chip.update(chip_params)
+      flash[:notice] = "Successfully Edited Chip"
       redirect_to admin_chips_path
     else
       flash.now[:error] = @chip.errors.full_messages(', ')
-      render :new
+      render :edit
     end
   end
 
