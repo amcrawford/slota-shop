@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
-  resources :chips, only: [:index, :show]
   resources :oils, only: [:index, :show], param: :slug
+  resources :chips, only: [:index, :show]
   resources :cart_chips, only: [:create, :index, :destroy, :update]
   resources :users, only: [:new, :create, :show] do
     resources :orders, only: [:index, :create, :show]
   end
+
+  namespace :admin do
+    resources :chips, only: [:index, :show, :create, :new, :update, :edit]
+ end
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
