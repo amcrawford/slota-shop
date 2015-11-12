@@ -20,15 +20,19 @@ class ActionDispatch::IntegrationTest
     Chip.create(name: name, price: price, description: description)
   end
 
-  def create_shop_and_logged_in_user
-    category_1 = Oil.create(name: "Lard")
-    item_1 = Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
-    item_2 = Chip.create(name: "Old Chips", price: 20, description: "Super yummy", oil_id: category_1.id, status: "retired")
-    user = User.create(username: "John", password: "Password")
-    order = user.orders.create(total_price: 20)
-    order.chip_orders.create(chip_id: item_1.id, quantity: 1, subtotal: 20)
-    order.chip_orders.create(chip_id: item_2.id, quantity: 1, subtotal: 20)
+  def create_user
+    User.create(username: "John", password: "Password")
+  end
 
+  def create_cart_for_visitor
+    visit chips_path
+
+    within("#slotachips") do
+      click_button "Add to Cart"
+    end
+  end
+
+  def login_user
     visit '/'
 
     click_link "Login"
@@ -37,6 +41,22 @@ class ActionDispatch::IntegrationTest
     fill_in "Password", with: "Password"
 
     click_button "Login"
+  end
+
+  def create_shop
+    category_1 = Oil.create(name: "Lard")
+    Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    Chip.create(name: "Old Chips", price: 20, description: "Super yummy", oil_id: category_1.id, status: "retired")
+  end
+
+  def create_shop_and_logged_in_user
+    create_shop
+    user = create_user
+    order = user.orders.create(total_price: 20)
+    order.chip_orders.create(chip_id: Chip.all.first.id, quantity: 1, subtotal: 20)
+    order.chip_orders.create(chip_id: Chip.all.last.id, quantity: 1, subtotal: 20)
+
+    login_user
 
     visit orders_path
     click_link("View Order Details")
