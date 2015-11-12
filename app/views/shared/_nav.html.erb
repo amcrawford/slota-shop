@@ -10,6 +10,7 @@
       <li class="dropdown-button" data-activates="dropdown1"> Shop by Oil </li>
       <li><%= link_to "Cart (#{@cart.total})", cart_chips_path %> </li>
       <% if current_user %>
+        <li><%= link_to "View Past Orders", user_orders_path(current_user) %></li>
         <li><%= link_to "Logout", logout_path, method: :delete %></li>
       <% else %>
         <li><%= link_to "Login", login_path %></li>

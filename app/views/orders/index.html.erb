@@ -1,3 +1,6 @@
+<h2>Your Past Orders</h2>
+
 <% @orders.each do |order| %>
-  Ordered On: <%= order.created_at %> | <%= link_to "View Order Details", user_order_path(@user, order) %>
+  Ordered On:<br>
+  <%= DateTime.parse(order.created_at.to_s).month %>/ <%= DateTime.parse(order.created_at.to_s).day %>/ <%= DateTime.parse(order.created_at.to_s).year %> | <%= link_to "View Order Details", user_order_path(@user, order) %><br><br>
 <% end %>
