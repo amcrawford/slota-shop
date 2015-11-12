@@ -1,2 +1,3 @@
-Order 1 <br>
-Order 2
+<% @orders.each do |order| %>
+  Ordered On: <%= order.created_at %>
+<% end %>  

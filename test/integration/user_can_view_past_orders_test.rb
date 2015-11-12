@@ -5,6 +5,8 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
     category_1 = Oil.create(name: "Lard")
     item_1 = Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
     user = User.create(username: "John", password: "Password")
+    order = user.orders.create(total_price: 20)
+    order.chip_orders.create(chip_id: item_1.id, quantity: 1, subtotal: 20)
 
     visit '/'
 
@@ -17,7 +19,7 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
 
     visit user_orders_path(user.id)
 
-    assert page.has_content?("Order 1")
-    assert page.has_content?("Order 2")
+    assert page.has_content?("Ordered On: #{order.created_at}")
+
   end
 end
