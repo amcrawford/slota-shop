@@ -1,5 +1,7 @@
 class Chip < ActiveRecord::Base
   belongs_to :oil_type
+  has_many :chip_orders
+  has_many :orders, through: :chip_orders
   before_save :set_slug
   has_attached_file :image
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]

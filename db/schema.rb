@@ -11,23 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111202953) do
+ActiveRecord::Schema.define(version: 20151112000121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chip_orders", force: :cascade do |t|
+    t.integer "chip_id"
+    t.integer "order_id"
+    t.integer "quantity"
+    t.integer "subtotal"
+  end
+
+  add_index "chip_orders", ["chip_id"], name: "index_chip_orders_on_chip_id", using: :btree
+  add_index "chip_orders", ["order_id"], name: "index_chip_orders_on_order_id", using: :btree
 
   create_table "chips", force: :cascade do |t|
     t.string   "name"
     t.integer  "price"
     t.string   "description"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.integer  "oil_id"
-    t.string   "slug"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "slug"
+    t.string   "status",             default: "available"
   end
 
   add_index "chips", ["oil_id"], name: "index_chips_on_oil_id", using: :btree
@@ -39,6 +50,14 @@ ActiveRecord::Schema.define(version: 20151111202953) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string   "status"
+    t.integer  "total_price"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "password_digest"
@@ -46,5 +65,7 @@ ActiveRecord::Schema.define(version: 20151111202953) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "chip_orders", "chips"
+  add_foreign_key "chip_orders", "orders"
   add_foreign_key "chips", "oils"
 end
