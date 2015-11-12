@@ -40,6 +40,7 @@ group :development, :test do
   gem 'pry'
   gem 'launchy'
   gem 'mocha'
+  gem 'simplecov'
 end
 
 group :development do
