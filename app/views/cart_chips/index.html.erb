@@ -24,6 +24,6 @@
 <% if current_user %>
   <%= button_to "Place Order", user_orders_path(current_user, cart_total: @cart_total) %>
 <% else %>
-   #something else
+   <!-- #something else -->
 <% end %>
 <%= link_to "Keep Shopping", chips_path %>

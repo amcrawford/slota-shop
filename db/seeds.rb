@@ -36,3 +36,8 @@ Chip.create!([
     oil_id: 1,
     image_file_name: "http://www.getutz.com/media/k2/items/cache/0b1ad7a7b79268a1f4558db78e092446_M.jpg"},
   ])
+
+
+  User.create!([{username: "User", password: "Password"}, {username: "Admin", password: "Password"}])
+  Order.create!([{total_price: 20, user_id: 1}])
+  ChipOrder.create!([{chip_id: 1, quantity: 1, subtotal: 20, order_id: 1}])
