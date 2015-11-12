@@ -1,6 +1,6 @@
 class ChipOrder < ActiveRecord::Base
-  belongs_to :chips
-  belongs_to :orders
+  belongs_to :chip
+  belongs_to :order
 
   def self.create_chip_order(order, cart)
     cart.contents.each do |chip_id, quantity|

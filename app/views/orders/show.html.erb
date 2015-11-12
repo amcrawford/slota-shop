@@ -1,1 +1,22 @@
+<h2>Order <%= @order.id %> Details</h2>
 
+<div class="order_status">
+  Ordered At: <%= @order.created_at %><br />
+  Status<br />
+  Updated At:<br />
+</div>
+
+<div class="chips_ordered">
+  <% @order.chips.each do |chip| %>
+    <%= chip.name %><br />
+    <%= chip.status %><br />
+    <%= link_to "View Chip", chip_path(chip.slug) %><br />
+    <% chip_order = @order.chip_orders.find_by(order_id: @order.id) %><br />
+    Number of Chips: <%= chip_order.quantity %><br />
+    Subtotal: <%= chip_order.subtotal %><br />
+    <% end %>
+</div>
+
+<div class="order_total">
+  Order Total: <%= @order.total_price %>
+</div>
