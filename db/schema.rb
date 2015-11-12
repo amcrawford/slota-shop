@@ -33,11 +33,11 @@ ActiveRecord::Schema.define(version: 20151112000121) do
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.integer  "oil_id"
+    t.string   "slug"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "slug"
     t.string   "status",             default: "available"
   end
 
@@ -61,8 +61,9 @@ ActiveRecord::Schema.define(version: 20151112000121) do
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "role",            default: 0
   end
 
   add_foreign_key "chip_orders", "chips"
