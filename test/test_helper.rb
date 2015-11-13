@@ -45,7 +45,9 @@ class ActionDispatch::IntegrationTest
 
   def create_shop
     category_1 = Oil.create(name: "Lard")
+    category_2 = Oil.create(name: "Coconut Oil")
     Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    Chip.create(name: "Dang Coconut", price: 17, description: "Dang, these are good", oil_id: category_2.id)
     Chip.create(name: "Old Chips", price: 20, description: "Super yummy", oil_id: category_1.id, status: "retired")
   end
 

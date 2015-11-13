@@ -21,6 +21,10 @@ class CartChipsController < ApplicationController
       @cart.add_chip(chip.id)
     else
       @cart.subtract_chip(chip.id)
+      if @cart.count_of(chip.id) == 0
+        @cart.contents.delete(params[:id])
+        flash[:notice] = "<span style='color: green'>Successfully removed #{view_context.link_to(chip.name, chip_path(chip.slug))} from your cart.</span>"
+      end
     end
     @chips = CartChip.find_chips(@cart.contents)
     @chips_total = CartChip.chips_total(@chips)
