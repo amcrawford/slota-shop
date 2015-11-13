@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151112000121) do
+ActiveRecord::Schema.define(version: 20151113004747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20151112000121) do
     t.integer "chip_id"
     t.integer "order_id"
     t.integer "quantity"
-    t.integer "subtotal"
+    t.float   "subtotal"
   end
 
   add_index "chip_orders", ["chip_id"], name: "index_chip_orders_on_chip_id", using: :btree
@@ -28,17 +28,17 @@ ActiveRecord::Schema.define(version: 20151112000121) do
 
   create_table "chips", force: :cascade do |t|
     t.string   "name"
-    t.integer  "price"
+    t.float    "price"
     t.string   "description"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.integer  "oil_id"
+    t.string   "slug"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "slug"
-    t.string   "status",             default: "available"
+    t.string   "status",             default: "Available"
   end
 
   add_index "chips", ["oil_id"], name: "index_chips_on_oil_id", using: :btree
@@ -51,11 +51,11 @@ ActiveRecord::Schema.define(version: 20151112000121) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string   "status"
-    t.integer  "total_price"
+    t.string   "status",      default: "Ordered"
+    t.float    "total_price"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "users", force: :cascade do |t|

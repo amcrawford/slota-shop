@@ -10,7 +10,7 @@ class CartChip < ActiveRecord::Base
   def self.chips_total(chips)
     price_hash = {}
     chips.each do |chip, quantity|
-      price_hash[chip.id] = chip.price.to_i * quantity.to_i
+      price_hash[chip.id] = chip.price * quantity
     end
     price_hash
   end
@@ -18,7 +18,7 @@ class CartChip < ActiveRecord::Base
   def self.find_total(chips)
     total = 0
     chips.each do |chip, quantity|
-      total += chip.price.to_i * quantity.to_i
+      total += chip.price * quantity
     end
     total
   end

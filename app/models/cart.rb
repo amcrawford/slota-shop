@@ -15,7 +15,7 @@ class Cart
     contents[chip_id.to_s] -= 1
   end
 
-  def total
+  def cart_size
     @contents.values.sum
   end
 
