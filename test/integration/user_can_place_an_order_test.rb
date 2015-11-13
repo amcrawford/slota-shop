@@ -27,11 +27,7 @@ class UserCanPlaceAnOrderTest < ActionDispatch::IntegrationTest
 
     click_button "Place Order"
 
-    assert page.has_content?("Your order has been placed")
+    assert page.has_content?("Order was successfully placed")
+    assert page.has_content?("Cart (0)")
   end
-
-  test "unregistered user can place an order" do
-    skip
-  end
-
 end
