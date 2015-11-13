@@ -10,23 +10,24 @@
     </div>
     <div class = "col m9" id="<%= chip.slug %>">
       <h5><%= chip.name %></h5>
-      <span class="quantity">(<%= quantity %>)</span><%= button_to "+", cart_chip_path(chip.id, edit_action: "add"), method: :patch %>
+      <%= button_to "+", cart_chip_path(chip.id, edit_action: "add"), method: :patch %>
+      <span class="quantity">(<%= quantity %>)</span>
       <%= button_to "-", cart_chip_path(chip.id, edit_action: "subtract"), method: :patch %><br>
       <span class="price">Price: <%= number_to_currency chip.price %> x <%= quantity %> = <%= number_to_currency @chips_total[chip.id] %></span> <br>
-      <%= chip.description %><br>
+      <%= chip.description %><br><br>
       <%= link_to "Remove", cart_chip_path(chip.id), method: :delete, class: "btn" %>
     </div>
   </div>
   <% end %>
-</div>
+</div><br>
 
-<span class="cart_total">Total: <%= number_to_currency @cart_total%></span>
-  <ul>
-  <% if current_user %>
-    <%= button_to "Place Order", orders_path(cart_total: @cart_total), class: "btn" %>
-  <% else %>
-    <%= button_to "Place Order", login_path, method: :get, class: "btn" %>
-    <% flash[:error] = "Please login before placing order." %>
-  <% end %>
-  <%= link_to "Keep Shopping", chips_path, class: "btn" %>
-</ul>
+<p class="cart_total">Total: <%= number_to_currency @cart_total%></p>
+<div>
+      <% if current_user %>
+        <%= button_to "Place Order", orders_path(cart_total: @cart_total), class: "btn" %>
+      <% else %>
+        <%= button_to "Place Order", login_path, method: :get, class: "btn" %>
+        <% flash[:error] = "Please login before placing order." %>
+      <% end %><br>
+<%= link_to "Keep Shopping", chips_path, class: "btn" %>
+</div>
