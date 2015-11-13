@@ -22,4 +22,8 @@ class Cart
   def count_of(chip_id)
     contents[chip_id.to_s]
   end
+
+  def clear
+    @contents = {}
+  end
 end
