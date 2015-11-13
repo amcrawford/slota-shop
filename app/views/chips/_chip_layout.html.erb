@@ -1,8 +1,8 @@
 <b><%= chip.name %></b>
 <p><%= number_to_currency chip.price %></p>
  <% if chip.status == "Available" %>
-  <p><%= button_to "Add to Cart", cart_chips_path(chip_id: chip.id) %></p>
+  <p><%= button_to "Add to Cart", cart_chips_path(chip_id: chip.id), class: "btn"%></p>
 <% else %>
-  <p class="btn"> Item is Retired </p>
+  <p class="btn disabled"> Item is Retired </p>
 <% end %>
 <p><%= chip.description_type(source) %></p>
