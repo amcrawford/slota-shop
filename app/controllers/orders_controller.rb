@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.create(status: "Ordered", user_id: current_user.id, total_price: params[:cart_total])
+    @order = Order.create(user_id: current_user.id, total_price: params[:cart_total])
     ChipOrder.create_chip_order(@order, @cart)
     @cart.contents.clear
     flash[:notice] = "Order was successfully placed"

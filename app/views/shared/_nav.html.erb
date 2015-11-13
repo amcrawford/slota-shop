@@ -8,7 +8,7 @@
       <!-- <li> <%#= link_to "Our Story" %> </li> -->
       <li> <%= link_to "Shop Our Chips", chips_path %> </li>
       <li> <%= link_to "Shop by Oil", oils_path%> </li>
-      <li><%= link_to "Cart (#{@cart.total})", cart_chips_path %> </li>
+      <li><%= link_to "Cart (#{@cart.cart_size})", cart_chips_path %> </li>
       <% if current_user %>
         <li><%= link_to "View Past Orders", orders_path %></li>
         <li><%= link_to "Logout", logout_path, method: :delete %></li>
