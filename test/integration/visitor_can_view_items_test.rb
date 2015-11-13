@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class VisitorCanViewItemsTest < ActionDispatch::IntegrationTest
   test "visitor can view items test" do
@@ -6,7 +6,7 @@ class VisitorCanViewItemsTest < ActionDispatch::IntegrationTest
     item_2 = create_chip("Trader Joe's BBQ", 15, "I'd trade slota for these!")
     item_3 = create_chip("Dang Coconut", 17, "Dang, these are good")
 
-    visit '/chips'
+    visit "/chips"
 
     within(".chips") do
       assert page.has_content?("Slotachips")
@@ -32,7 +32,7 @@ class VisitorCanViewItemsTest < ActionDispatch::IntegrationTest
       click_link "Lard"
     end
 
-    assert current_path, '/lard'
+    assert current_path, "/lard"
 
     within(".chips") do
       assert page.has_content?("Slotachips")
@@ -45,7 +45,7 @@ class VisitorCanViewItemsTest < ActionDispatch::IntegrationTest
       click_link "Coconut Oil"
     end
 
-    assert current_path, '/coconut-oil'
+    assert current_path, "/coconut-oil"
 
     within(".chips") do
       assert page.has_content?("Trader Joe's BBQ")

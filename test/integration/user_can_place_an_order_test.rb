@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class UserCanPlaceAnOrderTest < ActionDispatch::IntegrationTest
   test "registered user can place an order" do
@@ -8,7 +8,7 @@ class UserCanPlaceAnOrderTest < ActionDispatch::IntegrationTest
 
     user = User.create(username: "John", password: "Password")
 
-    visit '/'
+    visit "/"
 
     click_link "Login"
 
@@ -23,7 +23,7 @@ class UserCanPlaceAnOrderTest < ActionDispatch::IntegrationTest
       click_button "Add to Cart"
     end
 
-    visit '/cart'
+    visit "/cart"
 
     click_button "Place Order"
 

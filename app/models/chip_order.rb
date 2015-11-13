@@ -9,5 +9,4 @@ class ChipOrder < ActiveRecord::Base
       ChipOrder.create(order_id: order.id, chip_id: chip_id, quantity: quantity, subtotal: subtotal)
     end
   end
-
 end

@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class VisitorCanCreateAccountTest < ActionDispatch::IntegrationTest
 
@@ -13,7 +13,7 @@ class VisitorCanCreateAccountTest < ActionDispatch::IntegrationTest
       click_button "Add to Cart"
     end
 
-    visit '/'
+    visit "/"
 
     within (".nav-wrapper") do
       assert page.has_content?("Login")
@@ -33,7 +33,7 @@ class VisitorCanCreateAccountTest < ActionDispatch::IntegrationTest
     refute page.has_content?("Login")
     assert page.has_content?("Logout")
 
-    visit '/cart'
+    visit "/cart"
 
     assert page.has_content?("Slotachips")
 

@@ -29,7 +29,7 @@ Chip.create!([
     health benefits of coconut oil. They're so good, you'll say Dang! ",
     oil_id: 2,
     image_file_name: "http://images.vitaminimages.com/pp/VF/Assets/Puritan_products/Detail_page/004049.jpg",
-    status: "retired"},
+    status: "retired" },
   { name: "Grandma Utz Handcooked Potato Chips BBQ",
     price: 6.99,
     description: "Slightly thicker, un-rinsed potato slices, kettle-cooked in

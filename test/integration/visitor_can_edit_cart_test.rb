@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class VisitorCanEditCartTest < ActionDispatch::IntegrationTest
   test "visitor can remove an item from his or her cart" do
@@ -18,7 +18,7 @@ class VisitorCanEditCartTest < ActionDispatch::IntegrationTest
 
     visit cart_chips_path
 
-    within('#slotachips') do
+    within("#slotachips") do
       click_link "Remove"
     end
 
@@ -26,12 +26,12 @@ class VisitorCanEditCartTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("Successfully removed Slotachips from your cart.")
 
-    within('.chips') do
+    within(".chips") do
       refute page.has_content?("Slotachips")
     end
 
     click_link "Slotachips"
-    assert_equal '/chips/slotachips', current_path
+    assert_equal "/chips/slotachips", current_path
   end
 
   test "user can adjust the quantity of an item in the cart" do
@@ -55,9 +55,9 @@ class VisitorCanEditCartTest < ActionDispatch::IntegrationTest
 
     visit cart_chips_path
 
-    within ('#slotachips') do
+    within ("#slotachips") do
       assert page.has_content?("Slotachips")
-      within ('.quantity') do
+      within (".quantity") do
         assert page.has_content?("1")
       end
       click_button "+"
@@ -65,35 +65,35 @@ class VisitorCanEditCartTest < ActionDispatch::IntegrationTest
 
     assert_equal cart_chips_path, current_path
 
-    within ('#slotachips') do
-      within ('.quantity') do
+    within ("#slotachips") do
+      within (".quantity") do
         assert page.has_content?("2")
       end
-      within ('.price') do
+      within (".price") do
         assert page.has_content?("41")
       end
     end
 
-    within ('.cart_total') do
+    within (".cart_total") do
       assert page.has_content?("Total: $58")
     end
 
-    within ('#slotachips') do
+    within ("#slotachips") do
       click_button "-"
     end
 
     assert_equal cart_chips_path, current_path
 
-    within ('#slotachips') do
-      within ('.quantity') do
+    within ("#slotachips") do
+      within (".quantity") do
         assert page.has_content?("1")
       end
-      within ('.price') do
+      within (".price") do
         assert page.has_content?("20")
       end
     end
 
-    within ('.cart_total') do
+    within (".cart_total") do
       assert page.has_content?("Total: $37")
     end
   end

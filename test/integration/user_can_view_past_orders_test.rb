@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
   test "user can view all past orders" do
@@ -8,7 +8,7 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
     order = user.orders.create(total_price: 20)
     order.chip_orders.create(chip_id: item_1.id, quantity: 1, subtotal: 20)
 
-    visit '/'
+    visit "/"
 
     click_link "Login"
 
@@ -29,7 +29,7 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
     order = user.orders.create(status: "Ordered", total_price: 20)
     order.chip_orders.create(chip_id: item_1.id, quantity: 1, subtotal: 20)
 
-    visit '/'
+    visit "/"
 
     click_link "Login"
 
