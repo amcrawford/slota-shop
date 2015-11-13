@@ -46,7 +46,7 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
       assert page.has_content?("1")
       assert page.has_content?("20")
       assert page.has_content?("View Chip")
-      assert page.has_content?("available")
+      assert page.has_content?("Available")
     end
 
     within(".order_status") do
