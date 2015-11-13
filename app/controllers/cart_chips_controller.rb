@@ -5,7 +5,7 @@ class CartChipsController < ApplicationController
     chip = Chip.find(params[:chip_id])
     @cart.add_chip(chip.id)
     session[:cart] = @cart.contents
-    flash[:notice] = "Added Slotachips to cart."
+    flash[:notice] = "Added #{chip.name} to cart."
     redirect_to chips_path
   end
 
