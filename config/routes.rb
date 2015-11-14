@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :create, :show]
   namespace :admin do
     resources :chips, only: [:index, :show, :create, :new, :update, :edit, :destroy]
+    resources :dashboard, only: [:index, :show]
+    resources :orders, only: [:index]
  end
 
   get '/login', to: 'sessions#new'

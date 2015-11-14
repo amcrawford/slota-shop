@@ -1,0 +1,4 @@
+<div id="order-<%=order.id%>">
+  <%= link_to "Order #{order.id}", order_path(order)%>
+  | <%= order.status %> | <%= order.update_links %>
+</div>

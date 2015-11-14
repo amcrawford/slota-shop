@@ -10,4 +10,9 @@ class Oil < ActiveRecord::Base
   def set_slug
     self.slug = name.downcase.gsub(" ", "-")
   end
+
+  def gimee_your_chips
+    chips.all
+  end
+
 end
