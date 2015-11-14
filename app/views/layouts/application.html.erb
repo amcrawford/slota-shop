@@ -9,9 +9,7 @@
 <body>
 
   <%= render partial: '/shared/nav' %>
-  <% if current_user.admin? %>
-    <%= render partial: '/shared/admin_nav' %>
-  <% end %>
+
 
 <div class="container">
   <% flash.each do |type, msg| %>
