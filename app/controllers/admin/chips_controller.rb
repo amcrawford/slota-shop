@@ -19,6 +19,7 @@ class Admin::ChipsController < Admin::BaseController
   end
 
   def show
+    @chip = Chip.find_by(slug: params[:id])
   end
 
   def edit
