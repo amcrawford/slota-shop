@@ -1,25 +1,9 @@
-class CartChip < ActiveRecord::Base
-  def self.find_chips(cart_content)
-    chips = {}
-    cart_content.each do |chip_id, quantity|
-      chips[Chip.find(chip_id)] = quantity
-    end
-    chips
-  end
+class CartChip < SimpleDelegator
+  attr_reader :chip, :quantity, :subtotal
 
-  def self.chips_total(chips)
-    price_hash = {}
-    chips.each do |chip, quantity|
-      price_hash[chip.id] = chip.price * quantity
-    end
-    price_hash
-  end
-
-  def self.find_total(chips)
-    total = 0
-    chips.each do |chip, quantity|
-      total += chip.price * quantity
-    end
-    total
+  def initialize(chip, quantity, subtotal)
+    super(chip)
+    @quantity = quantity
+    @subtotal = subtotal
   end
 end

@@ -28,6 +28,7 @@ class ItemRemovedFromCartWhenQuantityHitsZeroTest < ActionDispatch::IntegrationT
     within ('.chips') do
       refute page.has_content?("Slotachips")
     end
+
     assert page.has_content?("Successfully removed Slotachips from your cart.")
 
     within ('.cart_total') do

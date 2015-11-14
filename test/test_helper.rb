@@ -8,6 +8,20 @@ require 'simplecov'
 SimpleCov.start("rails")
 
 class ActiveSupport::TestCase
+  def create_chip(name, price, description)
+    Chip.create(name: name, price: price, description: description)
+  end
+
+  def create_cart(chip)
+    @cart = Cart.new( { chip.id.to_s => 1 } )
+  end
+
+  def create_two_chip_cart
+    @chip1 = create_chip("Slotachip", 6.99, "yummy")
+    @chip2 = create_chip("Doritos", 2.99, "cheesy")
+    create_cart(@chip1)
+    @cart.add_chip(@chip2.id.to_s)
+  end
 end
 
 class ActionDispatch::IntegrationTest

@@ -11,7 +11,7 @@
   <%= render partial: '/shared/nav' %>
 
   <% flash.each do |type, msg| %>
-    <p>
+    <p style='color: green'>
       <%= content_tag :div, msg.html_safe %>
     </p>
   <% end %>
