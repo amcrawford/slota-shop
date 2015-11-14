@@ -11,10 +11,13 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.create(user_id: current_user.id, total_price: params[:cart_total])
-    ChipOrder.create_chip_order(@order, @cart)
-    @cart.contents.clear
-    flash[:notice] = "Order was successfully placed"
-    redirect_to orders_path
+    @order = Order.new(user_id: current_user.id, total_price: params[:cart_total])
+    @order_completion = CompleteOrder.new(@order, @cart)
+    if @order_completion.create_order
+      flash[:notice] = "Order was successfully placed"
+      redirect_to orders_path
+    else
+      #something else
+    end
   end
 end

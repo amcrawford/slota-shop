@@ -43,7 +43,7 @@ class Cart
     @contents = {}
   end
 
-  def add_or_remove_chip(action, chip)
+  def add_or_subtract_chip(action, chip)
     if action == "add"
       add_chip(chip.id)
     else
@@ -51,7 +51,12 @@ class Cart
     end
   end
 
+  def remove_chip_completely(chip_id)
+    contents.delete(chip_id.to_s)
+  end
+
   def remove_notice?(action)
     action == "subtract"
   end
+
 end
