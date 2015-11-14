@@ -1,32 +1,36 @@
 <div class="chips"><br>
-  <% @chips.each do |chip| %>
-  <div class="row">
-    <div class="col m3">
-      <div class="card">
-        <div class="card-image">
-          <img src="<%= chip.image_file_name %>" >
-        </div>
-      </div>
-    </div>
-    <div class = "col m9" id="<%= chip.slug %>">
-      <h5><%= chip.name %></h5>
-      <%= chip.description %><br><br>
+  <ul class="collection">
+    <% @chips.each do |chip, quantity| %>
+    <li class="collection-item">
       <div class="row">
-        <div class="col s1">
-          <%= button_to "+", cart_chip_path(chip.id, edit_action: "add"), method: :patch %>
+        <div class="col m3">
+          <div class="card">
+            <div class="card-image">
+              <img src="<%= chip.image_file_name %>" >
+            </div>
+          </div>
         </div>
-        <div class="col s1">
-          <span class="quantity">(<%= chip.quantity %>)</span>
+        <div class = "col m9" id="<%= chip.slug %>">
+          <h5><%= chip.name %></h5>
+          <%= chip.description %><br><br>
+          <div class="row">
+            <div class="col s1" style="margin-top: 9px">
+              <%= button_to "+", cart_chip_path(chip.id, edit_action: "add"), method: :patch, class: "btn-floating"%>
+            </div>
+            <div class="col s1">
+              <h5 class="quantity">(<%= chip.quantity %>)</h5>
+            </div>
+            <div class="col s1" style="margin-top: 9px">
+              <%= button_to "-", cart_chip_path(chip.id, edit_action: "subtract"), method: :patch, class: "btn-floating" %><br>
+            </div>
+          </div>
+          <h6 class="price">Price: <%= number_to_currency chip.price %> x <%= chip.quantity %> = <%= number_to_currency chip.subtotal %></h6> <br>
+          <%= link_to "Remove", cart_chip_path(chip.id), method: :delete, class: "btn" %>
         </div>
-        <div class="col s1">
-          <%= button_to "-", cart_chip_path(chip.id, edit_action: "subtract"), method: :patch %><br>
-        </div>
-      </div>
-      <h6 class="price">Price: <%= number_to_currency chip.price %> x <%= chip.quantity %> = <%= number_to_currency chip.subtotal %></h6> <br>
-      <%= link_to "Remove", cart_chip_path(chip.id), method: :delete, class: "btn" %>
-    </div>
+    </li>
+    <% end %>
   </div>
-  <% end %>
+  </ul>
 </div><br>
 
 <h4 class="cart_total">Total: <%= number_to_currency @cart.total %></h4>

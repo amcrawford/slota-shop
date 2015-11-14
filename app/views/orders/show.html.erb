@@ -1,24 +1,25 @@
 <h2>Order <%= @order.id %> Details</h2>
 
-<div class="order_status">
-  <h5> Ordered: <%= @order.created_at.strftime("%B %d, %Y") %><br /></h5>
-  Status: <%= @order.status %><br />
-  Updated At:<br />
-</div>
+<div class="row">
+  <div class="order_status col m6">
+    <h5> Ordered: <%= @order.created_at.strftime("%B %d, %Y") %><br /></h5>
+    Status: <%= @order.status %><br />
+    Updated At:<br />
+    <div class="order_total">
+      Order Total: <%= number_to_currency @order.total_price %>
+    </div>
+  </div>
 
-<div class="chips_ordered">
-  <h5>Chips Ordered</h5>
-  <% @order.chips.each_with_index do |chip, i| %>
-    <span class="<%=chip.slug%>">
-      <%= i + 1 %>. <%= chip.name %> (<em><%= chip.status %></em>)<br />
-      <%= link_to "View Chip", chip_path(chip.id) %><br>
-      <% chip_order = @order.chip_orders.find_by(order_id: @order.id) %><br />
-      Number of Chips: <%= chip_order.quantity %><br />
-      Subtotal: <%= number_to_currency chip_order.subtotal %><br />
-    </span>
-    <% end %>
+  <div class="chips_ordered col m6">
+    <h5>Chips Ordered</h5>
+    <% @order.chips.each_with_index do |chip, i| %>
+      <span class="<%=chip.slug%>">
+        <%= i + 1 %>. <%= chip.name %> (<em><%= chip.status %></em>)<br />
+        <%= link_to "View Chip", chip_path(chip.id) %><br>
+        <% chip_order = @order.chip_orders.find_by(order_id: @order.id) %><br />
+        Number of Chips: <%= chip_order.quantity %><br />
+        Subtotal: <%= number_to_currency chip_order.subtotal %><br />
+      </span>
+      <% end %>
+    </div>
 </div><br><br>
-
-<div class="order_total">
-  Order Total: <%= number_to_currency @order.total_price %>
-</div>

@@ -1,3 +1,21 @@
 <h2><%= @chip.name %></h2>
 
-<%= render partial: 'chips/chip', locals: {chip: @chip, source: "show"} %>
+<div class="row">
+  <div class="col m3">
+    <div class="card">
+      <div class="card-image">
+        <img src="<%= @chip.image_file_name %>" >
+      </div>
+    </div>
+  </div>
+  <div class = "col m9" id="<%= @chip.slug %>">
+    <h5><%= @chip.name %></h5>
+    <%= @chip.description %><br><br>
+    <p><center><%= number_to_currency @chip.price %></center></p>
+    <% if @chip.status == "Available" %>
+     <p><center><%= button_to "Add to Cart", cart_chips_path(chip_id: @chip.id), class: "btn"%></center></p>
+   <% else %>
+     <center><p class="btn disabled"> Item is Retired </p></center>
+   <% end %>
+  </div>
+</div>
