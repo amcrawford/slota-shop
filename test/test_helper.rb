@@ -35,7 +35,11 @@ class ActionDispatch::IntegrationTest
   end
 
   def create_user
-    User.create(username: "John", password: "Password")
+    User.create(username: "John", password: "Password", role: 0)
+  end
+
+  def create_admin
+    User.create(username: "admin", password: "password", role: 1)
   end
 
   def create_cart_for_visitor
@@ -48,12 +52,17 @@ class ActionDispatch::IntegrationTest
 
   def login_user
     visit '/'
-
     click_link "Login"
-
     fill_in "Username", with: "John"
     fill_in "Password", with: "Password"
+    click_button "Login"
+  end
 
+  def login_admin
+    visit '/'
+    click_link "Login"
+    fill_in "Username", with: "admin"
+    fill_in "Password", with: "password"
     click_button "Login"
   end
 
