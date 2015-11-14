@@ -5,5 +5,6 @@ class OilsController < ApplicationController
 
   def show
     @oil = Oil.find_by(slug: params[:slug])
+    
   end
 end
