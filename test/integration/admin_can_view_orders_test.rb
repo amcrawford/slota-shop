@@ -67,20 +67,56 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
   end
 
   test "admin can see the number of orders of each status type" do
-    skip
-    create_order("Ordered", 5, 1)
-    create_order("Ordered", 5, 1)
-    create_order("Ordered", 5, 1)
-    create_order("Paid", 6, 2)
-    create_order("Cancelled", 7, 3)
-    create_order("Cancelled", 7, 3)
-    create_order("Completed", 8, 4)
+    order1 = create_order("Ordered", 5, 1)
+    order2 = create_order("Ordered", 5, 1)
+    order3 = create_order("Ordered", 5, 1)
+    order4 = create_order("Paid", 6, 2)
+    order5 = create_order("Cancelled", 7, 3)
+    order6 = create_order("Cancelled", 7, 3)
+    order7 = create_order("Completed", 8, 4)
     login_admin_to_dashboard
 
-    assert page.has_content("Ordered: 3")
-    assert page.has_content("Paid: 1")
-    assert page.has_content("Cancelled: 2")
-    assert page.has_content("Completed: 1")
+    assert page.has_content?("All Orders: 7")
+    assert page.has_content?("Ordered: 3")
+    assert page.has_content?("Paid: 1")
+    assert page.has_content?("Cancelled: 2")
+    assert page.has_content?("Completed: 1")
+
+    click_link "Ordered"
+    assert page.has_content?("Order #{order1.id}")
+    assert page.has_content?("Order #{order2.id}")
+    assert page.has_content?("Order #{order3.id}")
+    refute page.has_content?("Order #{order4.id}")
+    refute page.has_content?("Order #{order5.id}")
+    refute page.has_content?("Order #{order6.id}")
+    refute page.has_content?("Order #{order7.id}")
+
+    click_link "Paid"
+    refute page.has_content?("Order #{order1.id}")
+    refute page.has_content?("Order #{order2.id}")
+    refute page.has_content?("Order #{order3.id}")
+    assert page.has_content?("Order #{order4.id}")
+    refute page.has_content?("Order #{order5.id}")
+    refute page.has_content?("Order #{order6.id}")
+    refute page.has_content?("Order #{order7.id}")
+
+    click_link "Cancelled"
+    refute page.has_content?("Order #{order1.id}")
+    refute page.has_content?("Order #{order2.id}")
+    refute page.has_content?("Order #{order3.id}")
+    refute page.has_content?("Order #{order4.id}")
+    assert page.has_content?("Order #{order5.id}")
+    assert page.has_content?("Order #{order6.id}")
+    refute page.has_content?("Order #{order7.id}")
+
+    click_link "Completed"
+    refute page.has_content?("Order #{order1.id}")
+    refute page.has_content?("Order #{order2.id}")
+    refute page.has_content?("Order #{order3.id}")
+    refute page.has_content?("Order #{order4.id}")
+    refute page.has_content?("Order #{order5.id}")
+    refute page.has_content?("Order #{order6.id}")
+    assert page.has_content?("Order #{order7.id}")
   end
 
   test "admin can click on an order link to view more details" do
