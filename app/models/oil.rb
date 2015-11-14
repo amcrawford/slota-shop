@@ -14,4 +14,5 @@ class Oil < ActiveRecord::Base
   def gimee_your_chips
     chips.all
   end
+
 end

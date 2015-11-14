@@ -44,7 +44,6 @@ class ActionDispatch::IntegrationTest
 
   def create_cart_for_visitor
     visit chips_path
-
     within("#slotachips") do
       click_button "Add to Cart"
     end
@@ -85,6 +84,16 @@ class ActionDispatch::IntegrationTest
 
     visit orders_path
     click_link("View Order Details")
+  end
+
+  def login_admin_to_dashboard
+    create_admin
+    login_admin
+    visit '/admin/dashboard'
+  end
+
+  def create_order(status, price, user_id)
+    Order.create(status: status, total_price: price, user_id: user_id)
   end
 end
 
