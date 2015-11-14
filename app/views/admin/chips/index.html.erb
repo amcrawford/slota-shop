@@ -1,7 +1,12 @@
-<h1>All Chips</h1>
-
+<div class="row">
+  <div class="col s4">
+    <h1>All Chips</h1>
+  </div>
+  <div class="col s4" style="margin-top: 48px">
+    <%= link_to "Add New Chip", new_admin_chip_path, class: "btn" %>
+  </div>
+</div>
 <div class="chips">
-  <%= link_to "Add New Chip", new_admin_chip_path, class: "btn" %>
   <div class="row">
     <%= render @chips %>
   </div>
