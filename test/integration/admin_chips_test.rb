@@ -47,4 +47,41 @@ class AdminChipsTest < ActionDispatch::IntegrationTest
     assert_equal admin_chips_path, current_path
     assert page.has_content? 'EditedName'
   end
+
+  test 'admin can add chip' do
+    create_admin
+    category_1 = Oil.create(name: "Lard")
+    ApplicationController.any_instance.stubs(:current_user).returns(@admin)
+
+    visit admin_chips_path
+    click_link 'Add New Chip'
+    fill_in 'Name', with: 'NewChip'
+    fill_in 'Price', with: 1.99
+    fill_in 'Description', with: 'Coolest of the chips'
+    click_button 'Create Chip'
+
+    assert admin_chips_path, current_path
+
+    within('.chips') do
+      assert page.has_content?('NewChip')
+    end
+  end
+
+  test 'admin can delete chip' do
+    create_admin
+    create_shop
+    ApplicationController.any_instance.stubs(:current_user).returns(@admin)
+
+    visit admin_chips_path
+
+    within("#slotachips") do
+      click_link 'Delete'
+    end
+
+    assert admin_chips_path, current_path
+
+    within('.chips') do
+      refute page.has_content?('Slotachips')
+    end
+  end
 end

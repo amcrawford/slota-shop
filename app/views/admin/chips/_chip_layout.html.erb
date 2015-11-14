@@ -1,4 +1,5 @@
-<b><center><%= chip.name %></center></b>
+<b><center><%= link_to chip.name, admin_chip_path(chip.slug) %></center></b>
 <p><center><%= number_to_currency chip.price %></center></p>
 <p><center><%= chip.description_type(source) %></center></p>
 <p><center><%= link_to "Edit", edit_admin_chip_path(chip.id), class: "btn" %><center></p>
+<p><center><%= link_to "Delete", admin_chip_path(chip.id), method: :delete, class: "btn" %><center></p>

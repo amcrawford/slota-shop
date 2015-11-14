@@ -18,3 +18,11 @@
       <% end %>
   </div>
 </nav>
+<% if current_admin? %>
+  <nav class="#eceff1 blue-grey lighten-5">
+    <li class="brand-logo black-text" style="stationary-text">Administrator</li>
+    <ul class="right hide-on-med-and-down">
+      <li><%=link_to "All Chips", admin_chips_path, class: "black-text" %></li>
+    </ul>
+  </nav>
+<% end %>

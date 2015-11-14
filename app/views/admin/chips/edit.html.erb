@@ -5,7 +5,9 @@
   <%= f.text_field :price%>
   <%= f.label :description %>
   <%= f.text_field :description%>
+  <%= f.label :status %>
+  <%= f.text_field :status%>
   <%= f.label :image %>
-  <%= f.text_field :image%>
-  <%= f.submit 'Update Chip'%>
+  <%= f.file_field :image%><br><br>
+  <%= f.submit 'Update Chip', class: 'btn' %>
 <% end %>
