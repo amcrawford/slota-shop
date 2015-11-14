@@ -10,11 +10,13 @@
 
   <%= render partial: '/shared/nav' %>
 
+<div class="container">
   <% flash.each do |type, msg| %>
     <p style='color: green'>
       <%= content_tag :div, msg.html_safe %>
     </p>
   <% end %>
+</div>
 
   <div class="container">
     <%= yield %>

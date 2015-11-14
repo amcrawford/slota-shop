@@ -4,5 +4,5 @@
   <h4>Order <%= order.id %></h4>
   Ordered On:<br>
   <%= order.created_at.strftime("%B %d, %Y") %> |
-  <%= link_to "View Order Details", order_path(order) %><br><br>
+  <%= link_to "View Order Details", order_path(order)%><br><br>
 <% end %>
