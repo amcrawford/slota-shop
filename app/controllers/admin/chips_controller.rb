@@ -3,6 +3,21 @@ class Admin::ChipsController < Admin::BaseController
     @chips = Chip.all
   end
 
+  def new
+    @chip = Chip.new
+  end
+
+  def create
+    @chip = Chip.new(chip_params)
+    if @chip.save
+      flash[:notice] = "Successfully created Chip"
+      redirect_to admin_chips_path
+    else
+      flash.now[:error] = @chip.errors.full_messages(', ')
+      render :new
+    end
+  end
+
   def show
   end
 
@@ -19,6 +34,12 @@ class Admin::ChipsController < Admin::BaseController
       flash.now[:error] = @chip.errors.full_messages(', ')
       render :edit
     end
+  end
+
+  def destroy
+    @chip = Chip.find(params[:id])
+    @chip.destroy
+    redirect_to admin_chips_path
   end
 
   private

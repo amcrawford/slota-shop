@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   resources :orders, only: [:index, :create, :show]
   namespace :admin do
-    resources :chips, only: [:index, :show, :create, :new, :update, :edit]
+    resources :chips, only: [:index, :show, :create, :new, :update, :edit, :destroy]
  end
 
   get '/login', to: 'sessions#new'
