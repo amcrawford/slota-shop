@@ -11,7 +11,6 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
   test "admin can view the dashboard" do
     create_admin
     login_admin
-    visit "/admin/dashboard"
 
     assert page.has_content?("Admin Dashboard")
   end
@@ -38,7 +37,9 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
     order2 = create_order("Paid", 6, user.id)
     order3 = create_order("Cancelled", 7, user.id)
     order4 = create_order("Completed", 8, user.id)
-    login_admin_to_dashboard
+
+    create_admin
+    login_admin
 
     within("#order-#{order1.id}") do
       assert page.has_content?("#{order1.id}")
@@ -81,7 +82,9 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
     order5 = create_order("Cancelled", 7, 3)
     order6 = create_order("Cancelled", 7, 3)
     order7 = create_order("Completed", 8, 4)
-    login_admin_to_dashboard
+
+    create_admin
+    login_admin
 
     assert page.has_content?("Total Orders: 7")
     assert page.has_content?("Ordered (3)")
@@ -129,7 +132,9 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
   test "admin can click on an order link to view more details" do
     user = create_user
     order = create_order("Ordered", 5, user.id)
-    login_admin_to_dashboard
+
+    create_admin
+    login_admin
 
     assert page.has_link?("Order #{Order.all.last.id}")
 
@@ -139,29 +144,84 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
     assert page.has_content?
   end
 
-  test "admin can fliter order by order type" do
-    skip
-    login_admin_to_dashboard
-  end
-
   test "admin can cancel a 'paid' order" do
-    skip
-    login_admin_to_dashboard
+    user = create_user
+    order1 = create_order("Paid", 5, user.id)
+
+    create_admin
+    login_admin
+
+    within("#order-#{order1.id}") do
+      assert page.has_content?("Paid")
+      click_link "[cancel]"
+    end
+
+    within("#order-#{order1.id}") do
+      assert page.has_content?("Cancelled")
+      refute page.has_content?("[mark as paid]")
+      refute page.has_content?("[mark as complete]")
+      refute page.has_content?("[cancel]")
+    end
   end
 
   test "admin can cancel an 'ordered' order" do
-    skip
-    login_admin_to_dashboard
+    user = create_user
+    order1 = create_order("Ordered", 5, user.id)
+
+    create_admin
+    login_admin
+
+    within("#order-#{order1.id}") do
+      assert page.has_content?("Ordered")
+      click_link "[cancel]"
+    end
+
+    within("#order-#{order1.id}") do
+      assert page.has_content?("Cancelled")
+      refute page.has_content?("[mark as paid]")
+      refute page.has_content?("[mark as complete]")
+      refute page.has_content?("[cancel]")
+    end
   end
 
   test "admin can mark an 'ordered' order as 'paid'" do
-    skip
-    login_admin_to_dashboard
+    user = create_user
+    order1 = create_order("Ordered", 5, user.id)
+
+    create_admin
+    login_admin
+
+    within("#order-#{order1.id}") do
+      assert page.has_content?("Ordered")
+      click_link "[mark as paid]"
+    end
+
+    within("#order-#{order1.id}") do
+      assert page.has_content?("Paid")
+      refute page.has_content?("[mark as paid]")
+      assert page.has_content?("[mark as complete]")
+      assert page.has_content?("[cancel]")
+    end
   end
 
   test "admin can mark a 'paid' order as 'completed'" do
-    skip
-    login_admin_to_dashboard
+    user = create_user
+    order1 = create_order("Paid", 5, user.id)
+
+    create_admin
+    login_admin
+
+    within("#order-#{order1.id}") do
+      assert page.has_content?("Paid")
+      click_link "[mark as complete]"
+    end
+
+    within("#order-#{order1.id}") do
+      assert page.has_content?("Complete")
+      refute page.has_content?("[mark as paid]")
+      refute page.has_content?("[mark as complete]")
+      refute page.has_content?("[cancel]")
+    end
   end
 
 end

@@ -9,13 +9,23 @@ class Order < ActiveRecord::Base
 
   def update_links
     if status == "Ordered"
-      links = "[mark as paid] [cancel]"
+      links = ["[mark as paid]", "[cancel]"]
     elsif status == "Paid"
-      links = "[mark as complete] [cancel]"
+      links = ["[mark as complete]", "[cancel]"]
     else
-      links = nil
+      links = []
     end
     links
+  end
+
+  def status_update(new_status)
+    if new_status == "[cancel]"
+      self.status = "Cancelled"
+    elsif new_status == "[mark as paid]"
+      self.status = "Paid"
+    elsif new_status == "[mark as complete]"
+      self.status = "Complete"
+    end
   end
 
   def size_of_order
