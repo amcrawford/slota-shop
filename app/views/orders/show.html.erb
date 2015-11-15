@@ -15,7 +15,7 @@
     <% @order.chips.each_with_index do |chip, i| %>
       <span class="<%=chip.slug%>">
         <%= i + 1 %>. <%= chip.name %> (<em><%= chip.status %></em>)<br />
-        <%= link_to "View Chip", chip_path(chip.id) %><br>
+        <%= link_to "View Chip", chip_path(chip.slug) %><br>
         <% chip_order = @order.chip_orders.find_by(order_id: @order.id) %><br />
         Number of Chips: <%= chip_order.quantity %><br />
         Subtotal: <%= number_to_currency chip_order.subtotal %><br />
