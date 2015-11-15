@@ -2,6 +2,7 @@ require 'test_helper'
 
 class VisitorRedirectedToLoginWhenClicksCheckoutTest < ActionDispatch::IntegrationTest
   test 'user that has not logged in directed to login when click checkout' do
+    skip
     create_shop
     create_user
     create_cart_for_visitor
