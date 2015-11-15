@@ -77,10 +77,10 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
     login_admin_to_dashboard
 
     assert page.has_content?("Total Orders: 7")
-    assert page.has_content?("Ordered: 3")
-    assert page.has_content?("Paid: 1")
-    assert page.has_content?("Cancelled: 2")
-    assert page.has_content?("Completed: 1")
+    assert page.has_content?("Ordered (3)")
+    assert page.has_content?("Paid (1)")
+    assert page.has_content?("Cancelled (2)")
+    assert page.has_content?("Completed (1)")
 
     click_link "Ordered"
     assert page.has_content?("Order #{order1.id}")
