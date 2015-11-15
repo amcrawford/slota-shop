@@ -120,7 +120,8 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
   end
 
   test "admin can click on an order link to view more details" do
-    order = create_order("Ordered", 5, 1)
+    user = create_user
+    order = create_order("Ordered", 5, user.id)
     login_admin_to_dashboard
 
     assert page.has_link?("Order #{Order.all.last.id}")
