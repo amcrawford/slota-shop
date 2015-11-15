@@ -12,13 +12,14 @@
 
 
 <div class="container">
-  <div class="card">
     <% flash.each do |type, msg| %>
+    <div class="card">
       <p>
         <center style='color:green'><%= content_tag :div, msg.html_safe %></center>
       </p>
+    </div>
+
     <% end %>
-  </div>
 </div>
 
   <div class="container">
