@@ -76,7 +76,7 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
     order7 = create_order("Completed", 8, 4)
     login_admin_to_dashboard
 
-    assert page.has_content?("All Orders: 7")
+    assert page.has_content?("Total Orders: 7")
     assert page.has_content?("Ordered: 3")
     assert page.has_content?("Paid: 1")
     assert page.has_content?("Cancelled: 2")
