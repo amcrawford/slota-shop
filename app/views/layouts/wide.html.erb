@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SlotaShop</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= render partial: '/shared/nav' %>
+
+
+<div class="container">
+    <% flash.each do |type, msg| %>
+    <div class="card">
+      <p>
+        <center style='color:green'><%= content_tag :div, msg.html_safe %></center>
+      </p>
+    </div>
+
+    <% end %>
+</div>
+    <%= yield %>
+</body>
+</html>
