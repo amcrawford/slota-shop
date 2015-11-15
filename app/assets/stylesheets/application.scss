@@ -10,8 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  */
 @import "materialize";
 
@@ -32,4 +32,9 @@ main {
 .home-image {
     min-height: 100%;
     width: auto;
+}
+
+#chip-picture {
+  max-height: 240px;
+  width: auto;
 }

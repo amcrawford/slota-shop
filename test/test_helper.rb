@@ -8,6 +8,19 @@ require 'simplecov'
 SimpleCov.start("rails")
 
 class ActiveSupport::TestCase
+
+  def create_user
+    User.create(username: "John", password: "Password", role: 0)
+  end
+
+  def create_shop
+    category_1 = Oil.create(name: "Lard")
+    category_2 = Oil.create(name: "Coconut Oil")
+    Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    Chip.create(name: "Dang Coconut", price: 17, description: "Dang, these are good", oil_id: category_2.id)
+    Chip.create(name: "Old Chips", price: 20, description: "Super yummy", oil_id: category_1.id, status: "retired")
+  end
+
   def create_chip(name, price, description)
     Chip.create(name: name, price: price, description: description)
   end
