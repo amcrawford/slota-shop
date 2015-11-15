@@ -9,6 +9,12 @@ class ChipTest < ActiveSupport::TestCase
     order.chip_orders.create(chip_id: chip.id, quantity: 1, subtotal: 20)
     order.chip_orders.create(chip_id: chip.id, quantity: 2, subtotal: 40)
 
-    assert 2, chip.chip_orders.all.count
+    assert_equal 2, chip.chip_orders.all.count
+  end
+
+  test 'a chip can set its slug' do
+    Oil.create(name: "Lard")
+    chip = Chip.create(name: "Dang Coconut", price: 17, description: "Dang, these are good", oil_id: Oil.all.first)
+    assert_equal "dang-coconut", chip.slug
   end
 end
