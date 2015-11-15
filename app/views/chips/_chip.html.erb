@@ -1,7 +1,7 @@
 <div class="col m4">
   <div class="card medium">
     <div class="card-image">
-      <img id="chip-picture" src="<%= chip.image_file_name %>" >
+      <center><img id="chip-picture" src="<%= chip.image_file_name %>"></center>
     </div>
     <div class="card-content" id= <%= "#{chip.slug}"%>>
       <%= render partial: 'chips/chip_layout', locals: {chip: chip, source: "index"} %>
