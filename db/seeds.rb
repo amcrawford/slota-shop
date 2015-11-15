@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Oil.create!([{name: "Lard"}, {name: "Coconut Oil"}, {name: "Avocado Oil"}, {name: "Taro Oil"}])
+Oil.create!([{name: "Lard"}, {name: "Coconut Oil"}, {name: "Avocado Oil"}, {name: "Tallow Oil"}])
 
 Chip.create!([
   { name: "Grandma Utz Handcooked Potato Chips",
