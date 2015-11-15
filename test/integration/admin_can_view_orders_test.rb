@@ -5,13 +5,13 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
     create_admin
     login_admin
 
-    assert_equal '/admin/dashboard', current_path
+    assert_equal "/admin/dashboard", current_path
   end
-  
+
   test "admin can view the dashboard" do
     create_admin
     login_admin
-    visit '/admin/dashboard'
+    visit "/admin/dashboard"
 
     assert page.has_content?("Admin Dashboard")
   end
@@ -19,14 +19,14 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
   test "a registered user can not see the dashboard" do
     create_user
     login_user
-    visit '/admin/dashboard'
+    visit "/admin/dashboard"
 
     refute page.has_content?("Admin Dashboard")
     assert page.has_content?("404")
   end
 
   test "a guest can not see the dashboard" do
-    visit '/admin/dashboard'
+    visit "/admin/dashboard"
 
     refute page.has_content?("Admin Dashboard")
     assert page.has_content?("404")
