@@ -36,7 +36,7 @@
 <h4 class="cart_total">Total: <%= number_to_currency @cart.total %></h4>
 <div>
       <% if current_user %>
-        <%= button_to "Place Order", orders_path(cart_total: @cart.total), class: "btn" %>
+        <%= button_to "Place Order", new_order_path(cart_total: @cart.total), class: "btn", method: :get %>
       <% else %>
         <%= button_to "Place Order", login_path, method: :get, class: "btn" %>
         <% flash[:error] = "Please login before placing order." %>

@@ -120,15 +120,23 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
   end
 
   test "admin can click on an order link to view more details" do
-    order = create_order("Ordered", 5, 1)
+    create_shop
+    user = create_user
+    chip_1 = Chip.all.first
+    order = user.orders.create(total_price: 20, address: "1 Street")
+    order.chip_orders.create(chip_id: chip_1.id, quantity: 1, subtotal: 20)
+    order.chip_orders.create(chip_id: Chip.all.last.id, quantity: 1, subtotal: 20)
     login_admin_to_dashboard
 
     assert page.has_link?("Order #{Order.all.last.id}")
-
     click_link "Order #{Order.all.last.id}"
 
+    assert page.has_link?("View Chip")
+    assert_equal 1, chip_1.chip_orders.last.quantity
+    assert page.has_content?('Address: 1 Street')
+    assert page.has_content?('User Name: John')
+
     assert page.has_content?("Order #{order.id} Details")
-    assert page.has_content?
   end
 
   test "admin can fliter order by order type" do
