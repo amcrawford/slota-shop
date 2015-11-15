@@ -1,24 +1,7 @@
 {
   "MiniTest": {
     "coverage": {
-<<<<<<< HEAD
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/models/oil.rb": [
-||||||| merged common ancestors
       "/Users/ambercrawford/turing/module_two/slota-shop/app/models/oil.rb": [
-=======
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/models/user.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/models/oil.rb": [
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
         1,
         1,
         1,
@@ -38,7 +21,7 @@
         null,
         null
       ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/models/chip.rb": [
+      "/Users/ambercrawford/turing/module_two/slota-shop/app/models/chip.rb": [
         1,
         1,
         1,
@@ -66,12 +49,6 @@
         null,
         null
       ],
-<<<<<<< HEAD
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/chips_controller.rb": [
-        1,
-        1,
-        20,
-||||||| merged common ancestors
       "/Users/ambercrawford/turing/module_two/slota-shop/app/models/user.rb": [
         1,
         1,
@@ -88,65 +65,58 @@
         1,
         1,
         1,
-        5,
-        5,
-        5,
-        5,
+        6,
+        6,
+        6,
+        6,
         null,
         1,
-        18,
-        7,
+        19,
+        8,
         null,
         3,
         null,
         8,
         null,
-        18,
+        19,
         null,
         null,
         1,
         0,
-=======
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/models/order.rb": [
-        1,
-        1,
-        1,
-        1,
-        5,
-        5,
-        5,
-        5,
+        null,
         null,
         1,
-        18,
-        7,
-        null,
+        4,
+        1,
         3,
-        null,
-        8,
-        null,
-        18,
-        null,
-        null,
-        1,
-        0,
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        null,
-        null,
         1,
         2,
+        1,
+        null,
+        1,
+        null,
         null,
         null
       ],
-<<<<<<< HEAD
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/chips_controller.rb": [
+      "/Users/ambercrawford/turing/module_two/slota-shop/app/models/chip_order.rb": [
         1,
         1,
-        20,
-        null,
+        1,
         null,
         1,
-        2,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/pages_controller.rb": [
+        1,
+        1,
+        13,
         null,
         null
       ],
@@ -160,7 +130,7 @@
         1,
         null,
         1,
-        128,
+        134,
         null,
         null,
         1,
@@ -168,15 +138,15 @@
         null,
         null,
         1,
-        246,
+        262,
         null,
         null,
         1,
-        7,
+        8,
         null,
         null,
         1,
-        120,
+        126,
         null,
         null
       ],
@@ -192,36 +162,16 @@
       ],
       "/Users/ambercrawford/turing/module_two/slota-shop/app/helpers/oil_types_helper.rb": [
         1,
-=======
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-<<<<<<< HEAD
-||||||| merged common ancestors
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/pages_controller.rb": [
-        1,
-=======
->>>>>>> 0d3d70e4297bce1318ab47aed2137f91d771e676
         null
       ],
       "/Users/ambercrawford/turing/module_two/slota-shop/app/models/cart.rb": [
         1,
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
         1,
         null,
         1,
-<<<<<<< HEAD
-||||||| merged common ancestors
+        144,
         null,
         null,
-=======
-        138,
-        null,
-        null,
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
         1,
         31,
         43,
@@ -231,14 +181,6 @@
         null,
         null,
         1,
-<<<<<<< HEAD
-        134,
-||||||| merged common ancestors
-        1,
-        null,
-        1,
-        128,
-=======
         35,
         null,
         null,
@@ -254,234 +196,62 @@
         2,
         null,
         4,
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
         null,
         null,
         1,
-        99,
-        null,
-        null,
-        1,
-<<<<<<< HEAD
-        262,
-||||||| merged common ancestors
-        246,
-=======
-        2,
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        null,
-        null,
-        1,
-<<<<<<< HEAD
-        8,
-||||||| merged common ancestors
-        7,
-=======
-        1,
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        null,
-        null,
-        1,
-<<<<<<< HEAD
-        126,
-||||||| merged common ancestors
-        120,
-=======
-        3,
-        1,
-        null,
-        2,
-        null,
-        null,
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        null,
-<<<<<<< HEAD
-        null
-      ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/helpers/application_helper.rb": [
-||||||| merged common ancestors
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/helpers/application_helper.rb": [
-=======
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        1,
-<<<<<<< HEAD
-        null
-      ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/helpers/chips_helper.rb": [
-||||||| merged common ancestors
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/helpers/chips_helper.rb": [
-=======
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        1,
-        null,
-        null,
-<<<<<<< HEAD
-        null
-      ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/helpers/oil_types_helper.rb": [
-||||||| merged common ancestors
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/helpers/oil_types_helper.rb": [
-=======
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        1,
-        3,
-        null,
-        null,
-        null
-      ],
-<<<<<<< HEAD
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/cart_chips_controller.rb": [
-=======
-<<<<<<< HEAD
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/models/cart.rb": [
-        1,
-||||||| merged common ancestors
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/models/cart.rb": [
-        1,
-=======
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/models/cart_chip.rb": [
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        1,
-        1,
-<<<<<<< HEAD
-        144,
-        null,
-||||||| merged common ancestors
-        138,
-        null,
-=======
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        null,
-        1,
-        43,
-        43,
-        43,
-        null,
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/oils_controller.rb": [
->>>>>>> 0d3d70e4297bce1318ab47aed2137f91d771e676
-        1,
-        1,
-        null,
-        1,
-        11,
-        11,
-        11,
-        11,
-        11,
-        null,
-        null,
-        1,
-        12,
-        null,
-        null,
-        1,
-<<<<<<< HEAD
-        3,
-        3,
-        3,
-        2,
-=======
-<<<<<<< HEAD
         104,
-||||||| merged common ancestors
-        99,
-=======
-        128,
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        null,
->>>>>>> 0d3d70e4297bce1318ab47aed2137f91d771e676
-        null,
-        3,
-        3,
         null,
         null,
         1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/models/cart_chip.rb": [
-        1,
-        1,
-        null,
-        1,
-        43,
-        43,
-        43,
-        null,
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/pages_controller.rb": [
-        1,
-        1,
-        12,
-        null,
-        null
-      ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/cart_chips_controller.rb": [
-        1,
-        1,
-        null,
-        1,
-        11,
-        11,
-        11,
-        11,
-        11,
-        null,
-        null,
-        1,
-        12,
-        null,
-        null,
-        1,
-        3,
-        3,
-        3,
         2,
         null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
         3,
+        1,
+        null,
+        2,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
         3,
         null,
         null,
+        null
+      ],
+      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/sessions_controller.rb": [
         1,
         1,
+        null,
+        null,
         1,
+        10,
+        10,
+        10,
+        10,
+        10,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
         1,
-        1,
+        2,
+        2,
         null,
         null
       ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/models/cart_chip.rb": [
-        1,
-        1,
-        null,
-        1,
-        43,
-        43,
-        43,
-        null,
-        null
-      ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/pages_controller.rb": [
-        1,
-        1,
-        13,
-        null,
-        null
-      ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/users_controller.rb": [
+      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/users_controller.rb": [
         1,
         1,
         1,
@@ -509,338 +279,115 @@
         null,
         null
       ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/models/user.rb": [
+      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/orders_controller.rb": [
         1,
         1,
         1,
         null,
         1,
-        null,
-        null,
-        1,
-        null
-      ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/sessions_controller.rb": [
-        1,
-        1,
-        null,
-        null,
-        1,
-        10,
-        10,
-        10,
-        10,
-        10,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        2,
-        2,
-        null,
-        null
-      ],
-<<<<<<< HEAD
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/oils_controller.rb": [
-        1,
-        1,
-        2,
-=======
-<<<<<<< HEAD
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/oils_controller.rb": [
-        1,
-        1,
-        2,
+        4,
+        4,
         null,
         null,
         1,
         4,
->>>>>>> 0d3d70e4297bce1318ab47aed2137f91d771e676
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
         null,
         null,
         null
       ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/models/order.rb": [
-||||||| merged common ancestors
       "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/chips_controller.rb": [
         1,
-<<<<<<< HEAD
-        4,
-=======
         1,
         20,
->>>>>>> 0d3d70e4297bce1318ab47aed2137f91d771e676
         null,
         null,
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/admin/dashboard_controller.rb": [
-        1,
-        1,
-<<<<<<< HEAD
-        3,
-        null,
-=======
-        2,
-        null,
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/cart_chips_controller.rb": [
-=======
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/cart_chips_controller.rb": [
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        1,
-        1,
-        1,
-        1,
-        6,
-        6,
-        6,
-        6,
-        null,
-        1,
-        19,
-        8,
-        null,
-        3,
-        null,
-        8,
-        null,
-        19,
->>>>>>> 0d3d70e4297bce1318ab47aed2137f91d771e676
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/admin/base_controller.rb": [
-        1,
-        0,
-        null,
-        null,
-        1,
-<<<<<<< HEAD
-        null,
-        1,
-        22,
-        null,
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/admin/orders_controller.rb": [
-=======
-        4,
-        1,
-        3,
->>>>>>> 0d3d70e4297bce1318ab47aed2137f91d771e676
         1,
         2,
-        1,
-        4,
-        null,
-<<<<<<< HEAD
-||||||| merged common ancestors
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/models/cart_chip.rb": [
-        1,
-=======
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/admin/chips_controller.rb": [
-        1,
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        1,
-        7,
-        null,
-        null,
-<<<<<<< HEAD
-        null
-      ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/models/chip_order.rb": [
-        1,
-||||||| merged common ancestors
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/admin/dashboard_controller.rb": [
-=======
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        1,
-        1,
-<<<<<<< HEAD
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-||||||| merged common ancestors
-        3,
-        null,
-        null,
-        null,
-        null,
-        null,
-=======
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        null,
-        null,
-<<<<<<< HEAD
-        null
-      ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/orders_controller.rb": [
-        1,
-||||||| merged common ancestors
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/admin/base_controller.rb": [
-        1,
-=======
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        1,
-<<<<<<< HEAD
-        1,
-        null,
-||||||| merged common ancestors
-        null,
-        1,
-        22,
-        null,
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/admin/orders_controller.rb": [
-        1,
-=======
-        1,
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        1,
-<<<<<<< HEAD
-        4,
-        4,
-        null,
-        null,
-||||||| merged common ancestors
-        4,
         null,
         null
       ],
       "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/oils_controller.rb": [
         1,
-=======
-        1,
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        1,
-<<<<<<< HEAD
-        4,
-||||||| merged common ancestors
-        2,
-=======
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        null,
-        0,
-        0,
-        null,
-<<<<<<< HEAD
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-||||||| merged common ancestors
-        1,
-        4,
-=======
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        null,
-        null,
-<<<<<<< HEAD
-        null
-      ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/admin/chips_controller.rb": [
-        1,
-||||||| merged common ancestors
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/admin/chips_controller.rb": [
-        1,
-=======
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
-        1,
-        0,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
         1,
         2,
         null,
+        null,
+        1,
+        4,
+        null,
+        null,
         null
-<<<<<<< HEAD
-      ]
-    },
-    "timestamp": 1447614052
-=======
       ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/admin/base_controller.rb": [
+      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/cart_chips_controller.rb": [
         1,
         1,
         null,
         1,
-        22,
+        11,
+        11,
+        11,
+        11,
+        11,
+        null,
+        null,
+        1,
+        12,
+        null,
+        null,
+        1,
+        3,
+        3,
+        3,
+        2,
+        null,
+        3,
+        3,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/ambercrawford/turing/module_two/slota-shop/app/models/cart_chip.rb": [
+        1,
+        1,
+        null,
+        1,
+        43,
+        43,
+        43,
         null,
         null
       ],
       "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/admin/dashboard_controller.rb": [
         1,
         1,
-        3,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/admin/orders_controller.rb": [
-        1,
-        1,
         4,
         null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/admin/base_controller.rb": [
+      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/admin/base_controller.rb": [
         1,
         1,
         null,
@@ -849,34 +396,66 @@
         null,
         null
       ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/admin/dashboard_controller.rb": [
+      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/admin/orders_controller.rb": [
         1,
         1,
         4,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null,
         null
       ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/admin/orders_controller.rb": [
+      "/Users/ambercrawford/turing/module_two/slota-shop/app/controllers/admin/chips_controller.rb": [
         1,
         1,
-        4,
+        7,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        2,
         null,
         null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1447612963
-||||||| merged common ancestors
-    "timestamp": 1447546415
-=======
-    "timestamp": 1447611782
->>>>>>> 8fa0b332fe04c09571b35d2eebf7db00fda0a013
->>>>>>> 0d3d70e4297bce1318ab47aed2137f91d771e676
+    "timestamp": 1447619503
   }
 }

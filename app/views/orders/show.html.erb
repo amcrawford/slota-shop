@@ -5,6 +5,7 @@
     <h5> Ordered: <%= @order.created_at.strftime("%B %d, %Y") %><br /></h5>
     Status: <%= @order.status %><br />
     Updated At:<br />
+    Address: <%= @order.address %>
     <div class="order_total">
       Order Total: <%= number_to_currency @order.total_price %>
     </div>

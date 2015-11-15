@@ -1,0 +1,8 @@
+<h4>Checkout</h4>
+
+<%= form_for @order do |f| %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.hidden_field :total_price, value: @total %>
+  <%= f.submit "Checkout", class: "btn" %>
+ <% end %>

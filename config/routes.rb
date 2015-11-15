@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :chips, only: [:index, :show], param: :slug
   resources :cart_chips, only: [:create, :index, :destroy, :update]
   resources :users, only: [:new, :create, :show]
-  resources :orders, only: [:index, :create, :show]
+  resources :orders, only: [:index, :create, :show, :new]
   namespace :admin do
     resources :chips, only: [:index, :show, :create, :new, :update, :edit, :destroy]
     resources :dashboard, only: [:index, :show]
