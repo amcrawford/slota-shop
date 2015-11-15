@@ -127,7 +127,6 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
 
     click_link "Order #{Order.all.last.id}"
 
-    save_and_open_page
     assert page.has_content?("Order #{order.id} Details")
     assert page.has_content?
   end

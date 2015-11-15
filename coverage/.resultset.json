@@ -49,15 +49,14 @@
         null,
         null
       ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/oils_controller.rb": [
+      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/chips_controller.rb": [
         1,
+        1,
+        20,
+        null,
+        null,
         1,
         2,
-        null,
-        null,
-        1,
-        4,
-        null,
         null,
         null
       ],
@@ -169,28 +168,6 @@
         null,
         null
       ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/chips_controller.rb": [
-        1,
-        1,
-        20,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null
-      ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/models/user.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null
-      ],
       "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/cart_chips_controller.rb": [
         1,
         1,
@@ -225,33 +202,21 @@
         null,
         null
       ],
+      "/Users/johnslota/code/ruby_rails/slota-shop/app/models/cart_chip.rb": [
+        1,
+        1,
+        null,
+        1,
+        43,
+        43,
+        43,
+        null,
+        null
+      ],
       "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/pages_controller.rb": [
         1,
         1,
         13,
-        null,
-        null
-      ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/sessions_controller.rb": [
-        1,
-        1,
-        null,
-        null,
-        1,
-        10,
-        10,
-        10,
-        10,
-        10,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        2,
-        2,
         null,
         null
       ],
@@ -283,14 +248,49 @@
         null,
         null
       ],
-      "/Users/johnslota/code/ruby_rails/slota-shop/app/models/cart_chip.rb": [
+      "/Users/johnslota/code/ruby_rails/slota-shop/app/models/user.rb": [
+        1,
         1,
         1,
         null,
         1,
-        43,
-        43,
-        43,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        10,
+        10,
+        10,
+        10,
+        10,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/Users/johnslota/code/ruby_rails/slota-shop/app/controllers/oils_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        4,
+        null,
         null,
         null
       ],
@@ -456,6 +456,6 @@
         null
       ]
     },
-    "timestamp": 1447612820
+    "timestamp": 1447612963
   }
 }
