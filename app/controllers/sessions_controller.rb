@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:session][:username])
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      flash.now[:notice] = "Logged in as #{@user.username}"
+      flash[:notice] = "Logged in as #{@user.username}"
       redirect_to user_path(@user)
     else
       flash.now[:error] = "Invalid Login. Try Again."
