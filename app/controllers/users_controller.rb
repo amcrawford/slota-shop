@@ -16,6 +16,12 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = current_user
+    if @user.admin?
+      redirect_to admin_dashboard_index_path
+    else
+      render :show
+    end
   end
 
   private
