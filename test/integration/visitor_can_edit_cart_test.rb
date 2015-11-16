@@ -75,7 +75,7 @@ class VisitorCanEditCartTest < ActionDispatch::IntegrationTest
     end
 
     within ('.cart_total') do
-      assert page.has_content?("Total: $58")
+      assert page.has_content?("$58")
     end
 
     within ('#slotachips') do
@@ -94,7 +94,7 @@ class VisitorCanEditCartTest < ActionDispatch::IntegrationTest
     end
 
     within ('.cart_total') do
-      assert page.has_content?("Total: $37")
+      assert page.has_content?("$37")
     end
   end
 end

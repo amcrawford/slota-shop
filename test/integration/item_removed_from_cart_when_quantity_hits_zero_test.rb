@@ -32,7 +32,7 @@ class ItemRemovedFromCartWhenQuantityHitsZeroTest < ActionDispatch::IntegrationT
     assert page.has_content?("Successfully removed Slotachips from your cart.")
 
     within ('.cart_total') do
-      assert page.has_content?("Total: $17")
+      assert page.has_content?("$17")
     end
   end
 end
