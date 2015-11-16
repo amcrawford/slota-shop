@@ -1,4 +1,6 @@
-<div class="chips"><br>
+<h4>Your Cart</h4>
+<div>
+  <div class="chips"><br>
   <ul class="collection">
     <% @chips.each do |chip, quantity| %>
     <li class="collection-item">
@@ -33,25 +35,26 @@
   </ul>
 </div><br>
 
-<h4 class="cart_total">Total: <%= number_to_currency @cart.total %></h4>
-<div>
-      <% if current_user %>
-        <%= button_to "Place Order", new_order_path, class: "btn", method: :get %>
-      <% else %>
-      <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Place Order</a>
-        <div id="modal1" class="modal">
-          <div class="modal-content">
-            <p>Please login before placing order.</p>
-            <div><%= form_for :session, url: login_path do |f| %>
-              <%= f.label :username %>
-              <%= f.text_field :username%>
-              <%= f.label :password %>
-              <%= f.password_field :password %>
-              <%= f.submit "Login" %>
-            <% end %></div>
-            <p> Don't have an account? <%= link_to "Create one here.", new_user_path %> </p>
-          </div>
+  <h4 class="cart_total">Total: <%= number_to_currency @cart.total %></h4>
+  <div>
+    <% if current_user %>
+      <%= button_to "Place Order", new_order_path, class: "btn", method: :get %>
+    <% else %>
+    <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Place Order</a>
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <p>Please login before placing order.</p>
+          <div><%= form_for :session, url: login_path do |f| %>
+            <%= f.label :username %>
+            <%= f.text_field :username%>
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+            <%= f.submit "Login" %>
+          <% end %></div>
+          <p> Don't have an account? <%= link_to "Create one here.", new_user_path %> </p>
         </div>
-      <% end %><br><br>
-<%= link_to "Keep Shopping", chips_path, class: "btn" %>
+      </div>
+    <% end %><br><br>
+  <%= link_to "Keep Shopping", chips_path, class: "btn" %>
+  </div>
 </div>
