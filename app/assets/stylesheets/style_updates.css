@@ -1,0 +1,23 @@
+html {
+  font-family: 'Oswald', sans-serif;
+ }
+
+ #cart {
+  font-size: 2rem;
+ }
+
+ .btn-floating {
+  border-radius: 0;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  margin: -15px 8px 0px 5px
+ }
+
+ #checkout {
+  border: 1px solid black;
+ }
+
+.checkout_header {
+  font-size: 2rem;
+}

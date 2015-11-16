@@ -60,7 +60,7 @@ class VisitorCanEditCartTest < ActionDispatch::IntegrationTest
       within ('.quantity') do
         assert page.has_content?("1")
       end
-      click_button "+"
+      click_button "add"
     end
 
     assert_equal cart_chips_path, current_path
@@ -69,7 +69,7 @@ class VisitorCanEditCartTest < ActionDispatch::IntegrationTest
       within ('.quantity') do
         assert page.has_content?("2")
       end
-      within ('.price') do
+      within ('.subtotal') do
         assert page.has_content?("41")
       end
     end
@@ -79,7 +79,7 @@ class VisitorCanEditCartTest < ActionDispatch::IntegrationTest
     end
 
     within ('#slotachips') do
-      click_button "-"
+      click_button "remove"
     end
 
     assert_equal cart_chips_path, current_path
@@ -88,7 +88,7 @@ class VisitorCanEditCartTest < ActionDispatch::IntegrationTest
       within ('.quantity') do
         assert page.has_content?("1")
       end
-      within ('.price') do
+      within ('.subtotal') do
         assert page.has_content?("20")
       end
     end
