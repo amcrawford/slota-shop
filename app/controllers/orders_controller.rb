@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
     @order_completion = CompleteOrder.new(@order, @cart)
     if @order_completion.create_order
       flash[:notice] = "Order was successfully placed"
-      NotificationsController.notify(number_to_currency(@order.total_price))
+      # NotificationsController.notify(number_to_currency(@order.total_price))
       redirect_to orders_path
     else
       #something else
