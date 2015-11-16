@@ -16,3 +16,7 @@
 //= require jquery
 //= require materialize-sprockets
 //= require_tree .
+
+$(document).ready(function() {
+  $('.modal-trigger').leanModal();
+});

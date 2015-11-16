@@ -38,8 +38,19 @@
       <% if current_user %>
         <%= button_to "Place Order", new_order_path, class: "btn", method: :get %>
       <% else %>
-        <%= button_to "Place Order", login_path, method: :get, class: "btn" %>
-        <% flash[:error] = "Please login before placing order." %>
+      <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Place Order</a>
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <p>Please login before placing order.</p>
+            <div><%= form_for :session, url: login_path do |f| %>
+              <%= f.label :username %>
+              <%= f.text_field :username%>
+              <%= f.label :password %>
+              <%= f.password_field :password %>
+              <%= f.submit "Login" %>
+            <% end %></div>
+          </div>
+        </div>
       <% end %><br>
 <%= link_to "Keep Shopping", chips_path, class: "btn" %>
 </div>
