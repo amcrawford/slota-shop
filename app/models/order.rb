@@ -33,6 +33,7 @@ class Order < ActiveRecord::Base
   end
 
   def self.scope_action(scope)
+    # Order.send(scope.downcase)
     if scope == "Ordered"
       Order.ordered
     elsif scope == "Paid"
