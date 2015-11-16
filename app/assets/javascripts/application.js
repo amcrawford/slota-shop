@@ -16,7 +16,11 @@
 //= require jquery
 //= require materialize-sprockets
 //= require_tree .
+var loaded = function(){
 
-$(document).ready(function() {
-  $('.modal-trigger').leanModal();
-});
+  $(document).ready(function() {
+    $('.modal-trigger').leanModal();
+  });
+}
+
+$(document).on("page:load ready", loaded);
