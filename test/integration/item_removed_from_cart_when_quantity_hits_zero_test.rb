@@ -20,7 +20,7 @@ class ItemRemovedFromCartWhenQuantityHitsZeroTest < ActionDispatch::IntegrationT
       within ('.quantity') do
         assert page.has_content?("1")
       end
-      click_button "-"
+      click_button "remove"
     end
 
     assert_equal cart_chips_path, current_path
