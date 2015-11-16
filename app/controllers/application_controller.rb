@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_cart
-  helper_method :oils, :current_user, :current_admin?
+  helper_method :oils, :current_user, :current_admin?, :return_oil_names
 
   def set_cart
     @cart = Cart.new(session[:cart])
@@ -13,6 +13,13 @@ class ApplicationController < ActionController::Base
   def oils
     Oil.all
   end
+
+  # def return_oil_names
+  #   oil_names = Oil.all.map do |oil|
+  #     oil.name
+  #   end
+  #   oil_names
+  # end
 
   def current_user
     User.find(session[:user_id]) if session[:user_id]
