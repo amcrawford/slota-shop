@@ -24,7 +24,8 @@ class OrdersController < ApplicationController
       NotificationsController.notify(number_to_currency(@order.total_price))
       redirect_to orders_path
     else
-      #something else
+      flash[:error] = "Cart cannot be empty."
+      redirect_to cart_chips_path
     end
   end
 end
