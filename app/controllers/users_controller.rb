@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  # before_action :require_current_user, only: [:edit, :update]
+
   def new
     @user = User.new
   end
@@ -17,11 +19,23 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    @orders = @user.orders.all
     if @user.admin?
       redirect_to admin_dashboard_index_path
     else
       render :show
     end
+  end
+
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    @user.update(user_params)
+    flash.notice = "Your Account Has Been Updated!"
+    redirect_to dashboard_path(@user)
   end
 
   private

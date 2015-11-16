@@ -1,8 +1,2 @@
 <h2>Your Past Orders</h2>
-
-<% @orders.each do |order| %>
-  <h4>Order <%= order.id %></h4>
-  Ordered On:<br>
-  <%= order.created_at.strftime("%B %d, %Y") %> |
-  <%= link_to "View Order Details", order_path(order)%><br><br>
-<% end %>
+<%= render partial: 'orders/orders_table' %>

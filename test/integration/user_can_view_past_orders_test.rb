@@ -19,7 +19,7 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
 
     visit orders_path(user.id)
 
-    assert page.has_content?("Ordered On: #{order.created_at.strftime("%B %d, %Y")}")
+    assert page.has_content?("#{order.created_at.strftime("%B %d, %Y")}")
   end
 
   test "user can view a singular past order" do
