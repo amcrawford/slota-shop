@@ -1,4 +1,7 @@
 <div id="order-<%=order.id%>">
   <%= link_to "Order #{order.id}", order_path(order)%>
-  | <%= order.status %> | <%= order.update_links %>
+  | <%= order.status %> |
+  <% order.update_links.each do |link_name| %>
+    <%= link_to link_name, admin_order_path(order, new_status: link_name), method: :patch %>
+  <% end %>
 </div>
