@@ -3,10 +3,15 @@
   <%= f.text_field :name%>
   <%= f.label :price %>
   <%= f.text_field :price%>
+  <%= f.label :oil_id %>
+  <%= f.collection_select(:oil_id, oils, :id, :name, { prompt: "Choose a category" }, class: "browser-default") %>
   <%= f.label :description %>
-  <%= f.text_field :description%>
+  <%= f.text_area(:description, class: "materialize-textarea") %>
   <%= f.label :status %>
   <%= f.text_field :status%>
+  <% if @chip.image.exists? %>
+      <%= image_tag @chip.image.url %><br/>
+  <% end %>
   <%= f.label :image %>
   <%= f.file_field :image%><br><br>
   <%= f.submit 'Update Chip', class: 'btn' %>

@@ -1,12 +1,15 @@
 <h4>Add New Chip</h4>
 
+
 <%= form_for @chip, url: admin_chips_path do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :price %>
   <%= f.text_field :price %>
+  <%= f.label :oil_id %>
+  <%= f.collection_select(:oil_id, oils, :id, :name, { prompt: "Choose a category" }, class: "browser-default") %>
   <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.text_area(:description, class: "materialize-textarea") %>
   <%= f.label :image, "Attach an Image" %><br />
   <%= f.file_field :image %><br><br>
   <%= f.submit "Create Chip", class: "btn" %>

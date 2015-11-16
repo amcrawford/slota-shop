@@ -4,7 +4,7 @@
   <div class="col m3">
     <div class="card">
       <div class="card-image">
-        <img src="<%= @chip.image_file_name %>" >
+        <%= image_tag @chip.image.url, id: "chip-picture" %>
       </div>
     </div>
   </div>
