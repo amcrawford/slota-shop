@@ -195,7 +195,7 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
       assert page.has_content?("Ordered")
       click_button "[mark as paid]"
     end
-save_and_open_page
+
     within("#order-#{order1.id}") do
       assert page.has_content?("Paid")
       refute page.has_button?("[mark as paid]")

@@ -12,7 +12,7 @@ class Oil < ActiveRecord::Base
   end
 
   def gimee_your_chips
-    chips.all
+    chips.available
   end
 
 end
