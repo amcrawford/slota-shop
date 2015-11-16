@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :oils, only: [:index, :show], param: :slug
   resources :chips, only: [:index, :show], param: :slug
   resources :cart_chips, only: [:create, :index, :destroy, :update]
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :edit, :update]
   resources :orders, only: [:index, :create, :show, :new]
   namespace :admin do
     resources :chips, only: [:index, :show, :create, :new, :update, :edit, :destroy]

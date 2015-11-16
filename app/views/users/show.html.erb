@@ -1,1 +1,13 @@
-I fight for the user!!
+<h2>
+Dashboard for <%= current_user.username %>
+</h2>
+
+<h4>
+<%= link_to "Edit Account", edit_user_path(current_user) %> | 
+<%= link_to "View Cart", cart_path %>
+</h4>
+
+<% if @orders %>
+  <h4>Your past orders:</h4>
+  <%= render partial: 'orders/orders_table' %>
+<% end %>
