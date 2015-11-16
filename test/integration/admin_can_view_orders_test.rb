@@ -44,33 +44,33 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
     within("#order-#{order1.id}") do
       assert page.has_content?("#{order1.id}")
       assert page.has_content?("Ordered")
-      assert page.has_content?("[mark as paid]")
-      refute page.has_content?("[mark as complete]")
-      assert page.has_content?("[cancel]")
+      assert page.has_button?("[mark as paid]")
+      refute page.has_button?("[mark as complete]")
+      assert page.has_button?("[cancel]")
     end
 
     within("#order-#{order2.id}") do
       assert page.has_content?("#{order2.id}")
       assert page.has_content?("Paid")
-      refute page.has_content?("[mark as paid]")
-      assert page.has_content?("[mark as complete]")
-      assert page.has_content?("[cancel]")
+      refute page.has_button?("[mark as paid]")
+      assert page.has_button?("[mark as complete]")
+      assert page.has_button?("[cancel]")
     end
 
     within("#order-#{order3.id}") do
       assert page.has_content?("#{order3.id}")
       assert page.has_content?("Cancelled")
-      refute page.has_content?("[mark as paid]")
-      refute page.has_content?("[mark as complete]")
-      refute page.has_content?("[cancel]")
+      refute page.has_button?("[mark as paid]")
+      refute page.has_button?("[mark as complete]")
+      refute page.has_button?("[cancel]")
     end
 
     within("#order-#{order4.id}") do
       assert page.has_content?("#{order4.id}")
       assert page.has_content?("Completed")
-      refute page.has_content?("[mark as paid]")
-      refute page.has_content?("[mark as complete]")
-      refute page.has_content?("[cancel]")
+      refute page.has_button?("[mark as paid]")
+      refute page.has_button?("[mark as complete]")
+      refute page.has_button?("[cancel]")
     end
   end
 
@@ -153,7 +153,7 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
 
     within("#order-#{order1.id}") do
       assert page.has_content?("Paid")
-      click_link "[cancel]"
+      click_button "[cancel]"
     end
 
     within("#order-#{order1.id}") do
@@ -173,7 +173,7 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
 
     within("#order-#{order1.id}") do
       assert page.has_content?("Ordered")
-      click_link "[cancel]"
+      click_button "[cancel]"
     end
 
     within("#order-#{order1.id}") do
@@ -193,14 +193,14 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
 
     within("#order-#{order1.id}") do
       assert page.has_content?("Ordered")
-      click_link "[mark as paid]"
+      click_button "[mark as paid]"
     end
-
+save_and_open_page
     within("#order-#{order1.id}") do
       assert page.has_content?("Paid")
-      refute page.has_content?("[mark as paid]")
-      assert page.has_content?("[mark as complete]")
-      assert page.has_content?("[cancel]")
+      refute page.has_button?("[mark as paid]")
+      assert page.has_button?("[mark as complete]")
+      assert page.has_button?("[cancel]")
     end
   end
 
@@ -213,14 +213,14 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
 
     within("#order-#{order1.id}") do
       assert page.has_content?("Paid")
-      click_link "[mark as complete]"
+      click_button "[mark as complete]"
     end
 
     within("#order-#{order1.id}") do
       assert page.has_content?("Complete")
-      refute page.has_content?("[mark as paid]")
-      refute page.has_content?("[mark as complete]")
-      refute page.has_content?("[cancel]")
+      refute page.has_button?("[mark as paid]")
+      refute page.has_button?("[mark as complete]")
+      refute page.has_button?("[cancel]")
     end
   end
 
