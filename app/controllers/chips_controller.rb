@@ -1,6 +1,6 @@
 class ChipsController < ApplicationController
   def index
-    @chips = Chip.all
+    @chips = Chip.available
   end
 
   def show

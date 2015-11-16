@@ -1,6 +1,6 @@
 class Admin::ChipsController < Admin::BaseController
   def index
-    @chips = Chip.all
+    @chips = Chip.admin_alpha
   end
 
   def new
