@@ -22,11 +22,11 @@ class OrderTest < ActiveSupport::TestCase
     user = create_user
     order = user.orders.create(total_price: 20)
 
-    expected = ["[mark as paid]", "[cancel]"]
+    expected = ["mark as paid", "cancel"]
     assert_equal expected, order.update_links
 
     order.status = "Paid"
-    expected = ["[mark as complete]", "[cancel]"]
+    expected = ["mark as complete", "cancel"]
     assert_equal expected, order.update_links
 
     order.status = "Cancelled"
@@ -43,22 +43,22 @@ class OrderTest < ActiveSupport::TestCase
     order = user.orders.create(total_price: 20)
 
     assert_equal "Ordered", order.status
-    order.status_update("[cancel]")
+    order.status_update("cancel")
     assert_equal "Cancelled", order.status
 
     order.status = "Ordered"
     assert_equal "Ordered", order.status
-    order.status_update("[mark as paid]")
+    order.status_update("mark as paid")
     assert_equal "Paid", order.status
 
     order.status = "Paid"
     assert_equal "Paid", order.status
-    order.status_update("[mark as complete]")
+    order.status_update("mark as complete")
     assert_equal "Complete", order.status
 
     order.status = "Paid"
     assert_equal "Paid", order.status
-    order.status_update("[cancel]")
+    order.status_update("cancel")
     assert_equal "Cancelled", order.status
   end
 end
