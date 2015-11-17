@@ -1,7 +1,7 @@
 <tr id="order-<%=order.id%>">
   <td><%= link_to "Order #{order.id}", order_path(order)%></td>
   <td><%= order.status %></td>
-  <td><% order.update_links.each do |link_name| %>
-    <%= button_to link_name, admin_order_path(order, new_status: link_name), method: :patch %>
-  <% end %></td>
+  <% order.update_links.each do |link_name| %>
+    <td><%= button_to link_name, admin_order_path(order, new_status: link_name), method: :patch, class: "waves-light btn" %></td>
+  <% end %>
 </tr>

@@ -11,9 +11,9 @@ class Order < ActiveRecord::Base
 
   def update_links
     if status == "Ordered"
-      links = ["[mark as paid]", "[cancel]"]
+      links = ["mark as paid", "cancel"]
     elsif status == "Paid"
-      links = ["[mark as complete]", "[cancel]"]
+      links = ["mark as complete", "cancel"]
     else
       links = []
     end
@@ -21,11 +21,11 @@ class Order < ActiveRecord::Base
   end
 
   def status_update(new_status)
-    if new_status == "[cancel]"
+    if new_status == "cancel"
       self.status = "Cancelled"
-    elsif new_status == "[mark as paid]"
+    elsif new_status == "mark as paid"
       self.status = "Paid"
-    elsif new_status == "[mark as complete]"
+    elsif new_status == "mark as complete"
       self.status = "Complete"
     end
   end
@@ -46,4 +46,12 @@ class Order < ActiveRecord::Base
       Order.completed
     end
   end
+
+  # def orders_by_status(scope)
+  #   if #something
+  #     Order.scope_action(scope).desc_by_date
+  #   else
+  #     #something else
+  #   end
+  # end
 end

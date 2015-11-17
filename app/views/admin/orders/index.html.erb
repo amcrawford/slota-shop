@@ -1,5 +1,5 @@
 <h2>
-<%= @orders.first.status %>
+<%= @order_status %>
 </h2>
 
 <%= link_to "Return to All Orders", admin_dashboard_index_path %><br />
@@ -17,6 +17,10 @@
     </tr>
   </thead>
   <tbody>
-    <%= render @orders %>
+    <% if @orders == []  %>
+      <tr><td>No orders of this type</td></tr>
+    <% else %>
+      <%= render @orders %>
+    <% end %>
   </tbody>
 </table>
