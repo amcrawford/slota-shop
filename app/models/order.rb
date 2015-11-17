@@ -3,10 +3,11 @@ class Order < ActiveRecord::Base
   has_many :chips, through: :chip_orders
   belongs_to :user
   validates :total_price, numericality: { greater_than: 0 }
-  scope :ordered,    -> { where status: 'Ordered' }
-  scope :paid,       -> { where status: 'Paid' }
-  scope :cancelled,  -> { where status: 'Cancelled' }
-  scope :completed,  -> { where status: 'Completed' }
+  scope :ordered,       -> { where status: 'Ordered' }
+  scope :paid,          -> { where status: 'Paid' }
+  scope :cancelled,     -> { where status: 'Cancelled' }
+  scope :completed,     -> { where status: 'Completed' }
+  scope :desc_by_date,  -> { order(id: :desc) }
 
   def update_links
     if status == "Ordered"
