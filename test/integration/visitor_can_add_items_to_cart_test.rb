@@ -13,7 +13,9 @@ class VisitorCanAddItemsToCartTest < ActionDispatch::IntegrationTest
 
     visit chips_path
 
-    assert page.has_content?("Cart (0)")
+    within(".right") do
+      assert page.has_content?("Cart (0)")
+    end
 
     within("#slotachips") do
       click_button "Add to Cart"
@@ -22,7 +24,9 @@ class VisitorCanAddItemsToCartTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Added Slotachips to cart.")
     assert page.has_content?("Cart (1)")
 
-    click_link "Cart"
+    within(".right") do
+      click_link "Cart"
+    end
 
     assert_equal cart_chips_path, current_path
 
@@ -56,7 +60,9 @@ class VisitorCanAddItemsToCartTest < ActionDispatch::IntegrationTest
       click_button "Add to Cart"
     end
 
-    click_link "Cart"
+    within(".right") do
+      click_link "Cart"
+    end
 
     assert_equal cart_chips_path, current_path
 
@@ -95,7 +101,9 @@ class VisitorCanAddItemsToCartTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Added Slotachips to cart.")
     assert page.has_content?("Cart (1)")
 
-    click_link "Cart"
+    within(".right") do
+      click_link "Cart"
+    end
 
     assert_equal cart_chips_path, current_path
 

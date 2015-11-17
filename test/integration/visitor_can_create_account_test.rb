@@ -15,12 +15,14 @@ class VisitorCanCreateAccountTest < ActionDispatch::IntegrationTest
 
     visit '/'
 
-    within (".nav-wrapper") do
+    within (".right") do
       assert page.has_content?("Login")
       assert page.has_content?("Create Account")
     end
 
-    click_link "Create Account"
+    within(".right") do
+      click_link "Create Account"
+    end
 
     fill_in "Username", with: "John"
     fill_in "Password", with: "Password"
@@ -37,7 +39,9 @@ class VisitorCanCreateAccountTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("Slotachips")
 
-    click_link "Logout"
+    within(".right") do
+      click_link "Logout"
+    end
 
     refute page.has_content?("Logout")
     assert page.has_content?("Login")

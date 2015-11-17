@@ -64,7 +64,9 @@ class ActionDispatch::IntegrationTest
 
   def login_user
     visit '/'
-    click_link "Login"
+    within(".right") do
+      click_link "Login"
+    end
     fill_in "Username", with: "John"
     fill_in "Password", with: "Password"
     click_button "Login"
@@ -72,7 +74,9 @@ class ActionDispatch::IntegrationTest
 
   def login_admin
     visit '/'
-    click_link "Login"
+    within(".right") do
+      click_link "Login"
+    end
     fill_in "Username", with: "admin"
     fill_in "Password", with: "password"
     click_button "Login"

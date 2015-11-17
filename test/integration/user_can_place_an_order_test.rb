@@ -2,7 +2,6 @@ require 'test_helper'
 
 class UserCanPlaceAnOrderTest < ActionDispatch::IntegrationTest
   test "registered user can place an order" do
-    skip
     category_1 = Oil.create(name: "Lard")
 
     item_1 = Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
@@ -11,7 +10,9 @@ class UserCanPlaceAnOrderTest < ActionDispatch::IntegrationTest
 
     visit '/'
 
-    click_link "Login"
+    within(".right") do
+      click_link "Login"
+    end
 
     fill_in "Username", with: "John"
     fill_in "Password", with: "Password"

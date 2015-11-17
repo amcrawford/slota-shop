@@ -10,7 +10,9 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
 
     visit '/'
 
-    click_link "Login"
+    within(".right") do
+      click_link "Login"
+    end
 
     fill_in "Username", with: "John"
     fill_in "Password", with: "Password"
@@ -31,7 +33,9 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
 
     visit '/'
 
-    click_link "Login"
+    within(".right") do
+      click_link "Login"
+    end
 
     fill_in "Username", with: "John"
     fill_in "Password", with: "Password"

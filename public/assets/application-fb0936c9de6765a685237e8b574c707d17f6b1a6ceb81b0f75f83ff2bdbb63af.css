@@ -12678,8 +12678,8 @@ main {
 
 /* line 38, /Users/shannonpaige/code/slota-shop/app/assets/stylesheets/application.scss */
 .home-image {
-  min-height: 100%;
-  width: auto;
+  height: auto;
+  max-width: 100%;
 }
 
 /* line 43, /Users/shannonpaige/code/slota-shop/app/assets/stylesheets/application.scss */
