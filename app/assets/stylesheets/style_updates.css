@@ -21,3 +21,33 @@ html {
 .checkout_header {
   font-size: 2rem;
 }
+
+.chip img {
+  float: left;
+  margin: 0 8px 0 -12px;
+  height: auto;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.chip {
+  display: inline-block;
+  height: 32px;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 32px;
+  padding: 0 12px;
+  border-radius: 16px;
+  background-color: white;
+}
+
+.card .card-content {
+  padding: 5px;
+  border-radius: 0 0 2px 2px;
+}
+
+.chip b,
+strong {
+  font-weight: normal;
+}
