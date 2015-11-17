@@ -1,5 +1,5 @@
 class Admin::DashboardController < Admin::BaseController
   def index
-    @orders = Order.all
+    @orders = Order.desc_by_date
   end
 end

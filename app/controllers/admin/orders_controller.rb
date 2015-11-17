@@ -1,6 +1,6 @@
 class Admin::OrdersController < Admin::BaseController
   def index
-    @orders = Order.scope_action(params[:scope])
+    @orders = Order.scope_action(params[:scope]).desc_by_date
   end
 
   def update
