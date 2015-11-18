@@ -17057,7 +17057,7 @@ Picker.extend( 'pickadate', DatePicker )
     isValidLength     = actualLength <= maxLength;
 
     $(this).parent().find('span[class="character-counter"]')
-                    .html( actualLength + "/" + maxLength);
+                    .html( actualLength + '/' + maxLength);
 
     addInputStyle(isValidLength, $(this));
   }
