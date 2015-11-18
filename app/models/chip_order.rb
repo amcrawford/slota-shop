@@ -7,7 +7,7 @@ class ChipOrder < ActiveRecord::Base
       chip_price = Chip.find(chip_id.to_i).price
       subtotal = chip_price * quantity
       ChipOrder.create(order_id: order.id,
-      chip_id: chip_id, quantity: quantity, subtotal: subtotal)
+                       chip_id: chip_id, quantity: quantity, subtotal: subtotal)
     end
   end
 end

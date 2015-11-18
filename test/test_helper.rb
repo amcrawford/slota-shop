@@ -20,8 +20,9 @@ class ActiveSupport::TestCase
                 description: "Super yummy", oil_id: category_1.id)
     Chip.create(name: "Dang Coconut", price: 17,
                 description: "Dang, these are good", oil_id: category_2.id)
-    Chip.create(name: "Old Chips",
-                price: 20, description: "Super yummy", oil_id: category_1.id, status: "retired")
+    Chip.create(name: "Old Chips", price: 20,
+                description: "Super yummy", oil_id: category_1.id,
+                status: "retired")
   end
 
   def create_chip(name, price, description)
@@ -95,7 +96,8 @@ class ActionDispatch::IntegrationTest
     Chip.create(name: "Dang Coconut", price: 17,
                 description: "Dang, these are good", oil_id: category_2.id)
     Chip.create(name: "Old Chips", price: 20,
-                description: "Super yummy", oil_id: category_1.id, status: "retired")
+                description: "Super yummy", oil_id: category_1.id,
+                status: "retired")
   end
 
   def create_shop_and_logged_in_user
