@@ -17,7 +17,8 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(user_id: current_user.id, total_price: params[:order][:total_price], address: params[:order][:address])
+    @order = Order.new(user_id: current_user.id,
+    total_price: params[:order][:total_price], address: params[:order][:address])
     @order_completion = CompleteOrder.new(@order, @cart)
     if @order_completion.create_order
       flash[:notice] = "Order was successfully placed"

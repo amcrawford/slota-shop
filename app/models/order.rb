@@ -46,12 +46,5 @@ class Order < ActiveRecord::Base
       Order.completed
     end
   end
-
-  # def orders_by_status(scope)
-  #   if #something
-  #     Order.scope_action(scope).desc_by_date
-  #   else
-  #     #something else
-  #   end
-  # end
+  
 end

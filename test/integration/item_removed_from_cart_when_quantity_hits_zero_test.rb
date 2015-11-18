@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class ItemRemovedFromCartWhenQuantityHitsZeroTest < ActionDispatch::IntegrationTest
   test "when quantity hits zero item is removed from cart" do
@@ -25,13 +25,13 @@ class ItemRemovedFromCartWhenQuantityHitsZeroTest < ActionDispatch::IntegrationT
 
     assert_equal cart_chips_path, current_path
 
-    within ('.chips') do
+    within (".chips") do
       refute page.has_content?("Slotachips")
     end
 
     assert page.has_content?("Successfully removed Slotachips from your cart.")
 
-    within ('.cart_total') do
+    within (".cart_total") do
       assert page.has_content?("$17")
     end
   end

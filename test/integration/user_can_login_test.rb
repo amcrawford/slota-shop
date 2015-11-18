@@ -1,10 +1,10 @@
-require 'test_helper'
+require "test_helper"
 
 class UserCanLoginTest < ActionDispatch::IntegrationTest
   test "user can login" do
     category_1 = Oil.create(name: "Lard")
 
-    item_1 = Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
 
     user = User.create(username: "John", password: "Password")
 
@@ -14,7 +14,7 @@ class UserCanLoginTest < ActionDispatch::IntegrationTest
       click_button "Add to Cart"
     end
 
-    visit '/'
+    visit "/"
 
     within (".right") do
       assert page.has_content?("Login")
@@ -36,7 +36,7 @@ class UserCanLoginTest < ActionDispatch::IntegrationTest
     refute page.has_content?("Login")
     assert page.has_content?("Logout")
 
-    visit '/cart'
+    visit "/cart"
 
     assert page.has_content?("Slotachips")
 
@@ -50,8 +50,8 @@ class UserCanLoginTest < ActionDispatch::IntegrationTest
 
   test 'assert_user_cannot_login_with_incorrect_information' do
     category_1 = Oil.create(name: "Lard")
-    item_1 = Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
-    user = User.create(username: "John", password: "Password")
+    Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    User.create(username: "John", password: "Password")
 
     visit chips_path
     within(".right") do

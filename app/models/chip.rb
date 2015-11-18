@@ -14,7 +14,7 @@ class Chip < ActiveRecord::Base
   end
 
   def set_slug
-    self.slug = name.downcase.gsub(" ", "-")
+    self.slug = name.downcase.tr(" ", "-")
   end
 
   def description_type(source)
