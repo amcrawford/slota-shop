@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class ChipTest < ActiveSupport::TestCase
   test 'a chip must have a name' do
@@ -12,8 +12,10 @@ class ChipTest < ActiveSupport::TestCase
     create_shop
     chip = Chip.all.first
     order = Order.create(total_price: 20, user_id: User.all.first.id)
-    order.chip_orders.create(chip_id: chip.id, quantity: 1, subtotal: 20)
-    order.chip_orders.create(chip_id: chip.id, quantity: 2, subtotal: 40)
+    order.chip_orders.create(chip_id: chip.id,
+                             quantity: 1, subtotal: 20)
+    order.chip_orders.create(chip_id: chip.id,
+                             quantity: 2, subtotal: 40)
 
     assert_equal 2, chip.chip_orders.all.count
   end

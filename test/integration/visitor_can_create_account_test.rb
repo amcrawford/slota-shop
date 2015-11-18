@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class VisitorCanCreateAccountTest < ActionDispatch::IntegrationTest
 
@@ -6,14 +6,15 @@ class VisitorCanCreateAccountTest < ActionDispatch::IntegrationTest
 
     category_1 = Oil.create(name: "Lard")
 
-    item_1 = Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    Chip.create(name: "Slotachips", price: 20,
+                description: "Super yummy", oil_id: category_1.id)
 
     visit chips_path
     within("#slotachips") do
       click_button "Add to Cart"
     end
 
-    visit '/'
+    visit "/"
 
     within (".right") do
       assert page.has_content?("Login")
@@ -35,7 +36,7 @@ class VisitorCanCreateAccountTest < ActionDispatch::IntegrationTest
     refute page.has_content?("Login")
     assert page.has_content?("Logout")
 
-    visit '/cart'
+    visit "/cart"
 
     assert page.has_content?("Slotachips")
 

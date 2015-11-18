@@ -29,7 +29,7 @@ Chip.create!([
     health benefits of coconut oil. They're so good, you'll say Dang! ",
     oil_id: 2,
     image_file_name: "/dang_coconutchips.png",
-    status: "retired"},
+    status: "retired" },
   { name: "Grandma Utz Handcooked BBQ",
     price: 6.99,
     description: "Slightly thicker, un-rinsed potato slices, kettle-cooked in
