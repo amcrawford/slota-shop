@@ -6,8 +6,8 @@ class Chip < ActiveRecord::Base
   before_save :set_slug
   has_attached_file :image
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
-  scope :available, -> { where(status: "Available").order(name: :desc) }
-  scope :admin_alpha, -> { order(status: :asc).order(name: :desc) }
+  scope :available, -> { where(status: "Available").order(name: :asc) }
+  scope :admin_alpha, -> { order(status: :asc).order(name: :asc) }
 
   def to_param
     slug
