@@ -15,4 +15,10 @@ class Oil < ActiveRecord::Base
     chips.available
   end
 
+  def oil_image
+    if name == "Avocado Oil"
+      img = "http://i.imgur.com/knvT3cG.png"
+    end
+  end
+
 end

@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Oil.create!([{name: "Lard"}, {name: "Coconut Oil"}, {name: "Avocado Oil"}, {name: "Tallow Oil"}])
+Oil.create!([{name: "Lard"}, {name: "Coconut Oil"}, {name: "Avocado Oil"}])
 
 Chip.create!([
   { name: "Grandma Utz Handcooked Original",
@@ -14,7 +14,7 @@ Chip.create!([
     description: "Whole fresh potatoes, sliced and cooked in lard, with salt added. ",
     oil_id: 1,
     image_file_name: "/utz_lardoriginal.png"},
-  { name: "Jacksons Honest Potato Chips, Sweet Potato",
+  { name: "Jacksons Honest Sweet Potato",
     price: 4.25,
     description: "Wade with coconut oil. Nature's most nourishing oil. Non GMO
     Project verified. Always kettle cooked in Colorado. Our goal at Jackson's
@@ -42,7 +42,7 @@ Chip.create!([
     its kettle-cooked potato chip line with the addition of Coconut Oil Kettle Cooked Potato Chips.",
     oil_id: 2,
     image_file_name: "/BoulderCanyonCoconut900.png"},
-  { name: "Boulder Canyon Sea Salt & Cracked Pepper",
+  { name: "Boulder Canyon Sea Salt",
     price: 3.89,
     description: "What’s better than our avocado oil chips? Adding a zesty pinch of salt combined with a kick of pepper for a perfect snack.",
     oil_id: 3,
