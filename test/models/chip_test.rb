@@ -13,8 +13,22 @@ class ChipTest < ActiveSupport::TestCase
   end
 
   test 'a chip can set its slug' do
-    Oil.create(name: "Lard")
-    chip = Chip.create(name: "Dang Coconut", price: 17, description: "Dang, these are good", oil_id: Oil.all.first)
+    create_shop
+    chip = Chip.find_by(name:"Dang Coconut")
     assert_equal "dang-coconut", chip.slug
+  end
+
+  test 'a chip can send its slug to params' do
+    create_shop
+    chip = Chip.find_by(name:"Dang Coconut")
+    assert_equal "dang-coconut", chip.to_param
+  end
+
+  test 'a chip can send its description to the right page' do
+    create_shop
+    chip = Chip.find_by(name:"Dang Coconut")
+
+    assert_equal "Dang, these are good", chip.description_type("show")
+    refute_equal "Dang, these are good", chip.description_type("index")
   end
 end

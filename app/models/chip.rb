@@ -20,9 +20,9 @@ class Chip < ActiveRecord::Base
     if source == "index"
       nil
     elsif source == "show"
-      chip.description
+      self.description
     else
-      chip.description
+      self.description
     end
   end
 end
