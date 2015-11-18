@@ -13,7 +13,7 @@ class Admin::ChipsController < Admin::BaseController
       flash[:notice] = "Successfully created Chip"
       redirect_to admin_chips_path
     else
-      flash.now[:error] = @chip.errors.full_messages(', ')
+      flash.now[:error] = "A chip must have a name"
       render :new
     end
   end
@@ -32,7 +32,7 @@ class Admin::ChipsController < Admin::BaseController
       flash[:notice] = "Successfully Edited Chip"
       redirect_to admin_chips_path
     else
-      flash.now[:error] = @chip.errors.full_messages(', ')
+      flash.now[:error] = "A chip must have a name"
       render :edit
     end
   end

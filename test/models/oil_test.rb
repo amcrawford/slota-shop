@@ -27,4 +27,11 @@ class OilTest < ActiveSupport::TestCase
 
     assert_equal "coconut-oil", oil.set_slug
   end
+
+  test 'a category can send its slug to params' do
+    create_shop
+    oil = Oil.create(name: "Coconut Oil")
+    oil.set_slug
+    assert_equal "coconut-oil", oil.to_param
+  end
 end

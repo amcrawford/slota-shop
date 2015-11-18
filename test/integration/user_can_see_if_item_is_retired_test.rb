@@ -18,4 +18,12 @@ class UserCanSeeIfItemIsRetiredTest < ActionDispatch::IntegrationTest
     visit '/lard'
     refute page.has_content?("Item is Retired")
   end
+
+  test 'user sees if item is retired on show page' do
+    create_shop_and_logged_in_user
+
+    visit chip_path("old-chips")
+
+    assert page.has_content?("Retired")
+  end
 end

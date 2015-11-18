@@ -26,7 +26,6 @@ class UserCanPlaceAnOrderTest < ActionDispatch::IntegrationTest
     end
 
     visit '/cart'
-
     click_button "Place Order"
 
     assert_equal new_order_path, current_path
@@ -35,5 +34,12 @@ class UserCanPlaceAnOrderTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("Order was successfully placed")
     assert page.has_content?("Cart (0)")
+
+    visit '/cart'
+    click_button "Place Order"
+    fill_in "Address", with: "1 Street"
+    click_button "Checkout"
+
+    assert page.has_content?("Cart cannot be empty.")
   end
 end

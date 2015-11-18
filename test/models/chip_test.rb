@@ -1,6 +1,12 @@
 require 'test_helper'
 
 class ChipTest < ActiveSupport::TestCase
+  test 'a chip must have a name' do
+    chip = Chip.create(price: 10)
+
+    assert_equal 0, Chip.all.count
+  end
+
   test 'a chip has many chip orders' do
     create_user
     create_shop

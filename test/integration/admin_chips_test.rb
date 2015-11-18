@@ -48,6 +48,23 @@ class AdminChipsTest < ActionDispatch::IntegrationTest
     assert page.has_content? 'EditedName'
   end
 
+  test 'admin cannot remove name from chip' do
+    create_admin
+    category_1 = Oil.create(name: "Lard")
+    item_1 = Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    ApplicationController.any_instance.stubs(:current_user).returns(@admin)
+
+    visit admin_chips_path
+    within '#slotachips' do
+      click_link 'Edit'
+    end
+
+    fill_in 'Name', with: ''
+    click_button 'Update Chip'
+
+    assert page.has_content?("A chip must have a name")
+  end
+
   test 'admin can add chip' do
     create_admin
     category_1 = Oil.create(name: "Lard")
@@ -65,6 +82,20 @@ class AdminChipsTest < ActionDispatch::IntegrationTest
     within('.chips') do
       assert page.has_content?('NewChip')
     end
+  end
+
+  test 'admin cannot add chip without a name' do
+    create_admin
+    category_1 = Oil.create(name: "Lard")
+    ApplicationController.any_instance.stubs(:current_user).returns(@admin)
+
+    visit admin_chips_path
+    click_link 'Add New Chip'
+    fill_in 'Price', with: 1.99
+    fill_in 'Description', with: 'Coolest of the chips'
+    click_button 'Create Chip'
+
+    assert page.has_content?("A chip must have a name")
   end
 
   test 'admin can delete chip' do

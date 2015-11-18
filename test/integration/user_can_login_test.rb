@@ -47,4 +47,21 @@ class UserCanLoginTest < ActionDispatch::IntegrationTest
     refute page.has_content?("Logout")
     assert page.has_content?("Login")
   end
+
+  test 'assert_user_cannot_login_with_incorrect_information' do
+    category_1 = Oil.create(name: "Lard")
+    item_1 = Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    user = User.create(username: "John", password: "Password")
+
+    visit chips_path
+    within(".right") do
+      click_link "Login"
+    end
+
+    fill_in "Username", with: "Amber"
+    fill_in "Password", with: "Password"
+
+    click_button "Login"
+    assert page.has_content?("Invalid Login.")
+  end
 end

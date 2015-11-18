@@ -1,4 +1,5 @@
 class Chip < ActiveRecord::Base
+  validates :name, presence: true
   belongs_to :oil_type
   has_many :chip_orders
   has_many :orders, through: :chip_orders
