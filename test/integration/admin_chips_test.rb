@@ -11,7 +11,8 @@ class AdminChipsTest < ActionDispatch::IntegrationTest
   test "logged in admin sees chips index" do
     create_admin
     category_1 = Oil.create(name: "Lard")
-    Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    Chip.create(name: "Slotachips", price: 20,
+                description: "Super yummy", oil_id: category_1.id)
 
     ApplicationController.any_instance.stubs(:current_user).returns(@admin)
     visit admin_chips_path
@@ -33,7 +34,8 @@ class AdminChipsTest < ActionDispatch::IntegrationTest
   test "admin can edit chip" do
     create_admin
     category_1 = Oil.create(name: "Lard")
-    Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    Chip.create(name: "Slotachips", price: 20,
+                description: "Super yummy", oil_id: category_1.id)
     ApplicationController.any_instance.stubs(:current_user).returns(@admin)
 
     visit admin_chips_path
@@ -51,7 +53,8 @@ class AdminChipsTest < ActionDispatch::IntegrationTest
   test "admin cannot remove name from chip" do
     create_admin
     category_1 = Oil.create(name: "Lard")
-    Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    Chip.create(name: "Slotachips", price: 20,
+                description: "Super yummy", oil_id: category_1.id)
     ApplicationController.any_instance.stubs(:current_user).returns(@admin)
 
     visit admin_chips_path

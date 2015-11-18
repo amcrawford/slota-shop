@@ -17,15 +17,16 @@ class ActiveSupport::TestCase
     category_1 = Oil.create(name: "Lard")
     category_2 = Oil.create(name: "Coconut Oil")
     Chip.create(name: "Slotachips", price: 20,
-    description: "Super yummy", oil_id: category_1.id)
+                description: "Super yummy", oil_id: category_1.id)
     Chip.create(name: "Dang Coconut", price: 17,
-    description: "Dang, these are good", oil_id: category_2.id)
+                description: "Dang, these are good", oil_id: category_2.id)
     Chip.create(name: "Old Chips",
-    price: 20, description: "Super yummy", oil_id: category_1.id, status: "retired")
+                price: 20, description: "Super yummy", oil_id: category_1.id, status: "retired")
   end
 
   def create_chip(name, price, description)
-    Chip.create(name: name, price: price, description: description)
+    Chip.create(name: name, price: price,
+                description: description)
   end
 
   def create_cart(chip)
@@ -48,7 +49,7 @@ class ActionDispatch::IntegrationTest
 
   def create_chip(name, price, description)
     Chip.create(name: name, price: price,
-    description: description)
+                description: description)
   end
 
   def create_user
@@ -90,11 +91,11 @@ class ActionDispatch::IntegrationTest
     category_1 = Oil.create(name: "Lard")
     category_2 = Oil.create(name: "Coconut Oil")
     Chip.create(name: "Slotachips", price: 20,
-    description: "Super yummy", oil_id: category_1.id)
+                description: "Super yummy", oil_id: category_1.id)
     Chip.create(name: "Dang Coconut", price: 17,
-    description: "Dang, these are good", oil_id: category_2.id)
+                description: "Dang, these are good", oil_id: category_2.id)
     Chip.create(name: "Old Chips", price: 20,
-    description: "Super yummy", oil_id: category_1.id, status: "retired")
+                description: "Super yummy", oil_id: category_1.id, status: "retired")
   end
 
   def create_shop_and_logged_in_user
@@ -102,9 +103,9 @@ class ActionDispatch::IntegrationTest
     user = create_user
     order = user.orders.create(total_price: 20)
     order.chip_orders.create(chip_id: Chip.all.first.id,
-    quantity: 1, subtotal: 20)
+                             quantity: 1, subtotal: 20)
     order.chip_orders.create(chip_id: Chip.all.last.id,
-    quantity: 1, subtotal: 20)
+                             quantity: 1, subtotal: 20)
 
     login_user
 

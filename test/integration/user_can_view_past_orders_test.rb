@@ -4,11 +4,12 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
   test "user can view all past orders" do
     category_1 = Oil.create(name: "Lard")
     item_1 =
-    Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    Chip.create(name: "Slotachips", price: 20,
+                description: "Super yummy", oil_id: category_1.id)
     user = User.create(username: "John", password: "Password")
     order = user.orders.create(total_price: 20)
     order.chip_orders.create(chip_id: item_1.id,
-    quantity: 1, subtotal: 20)
+                             quantity: 1, subtotal: 20)
 
     visit "/"
 
@@ -29,11 +30,12 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
   test "user can view a singular past order" do
     category_1 = Oil.create(name: "Lard")
     item_1 =
-    Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    Chip.create(name: "Slotachips", price: 20,
+                description: "Super yummy", oil_id: category_1.id)
     user = User.create(username: "John", password: "Password")
     order = user.orders.create(status: "Ordered", total_price: 20)
     order.chip_orders.create(chip_id: item_1.id,
-    quantity: 1, subtotal: 20)
+                             quantity: 1, subtotal: 20)
 
     visit "/"
 

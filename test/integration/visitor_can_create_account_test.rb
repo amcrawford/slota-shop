@@ -6,7 +6,8 @@ class VisitorCanCreateAccountTest < ActionDispatch::IntegrationTest
 
     category_1 = Oil.create(name: "Lard")
 
-    Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    Chip.create(name: "Slotachips", price: 20,
+                description: "Super yummy", oil_id: category_1.id)
 
     visit chips_path
     within("#slotachips") do

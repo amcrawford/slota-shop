@@ -4,7 +4,8 @@ class UserCanPlaceAnOrderTest < ActionDispatch::IntegrationTest
   test "registered user can place an order" do
     category_1 = Oil.create(name: "Lard")
 
-    Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    Chip.create(name: "Slotachips", price: 20,
+                description: "Super yummy", oil_id: category_1.id)
 
     User.create(username: "John", password: "Password")
 
