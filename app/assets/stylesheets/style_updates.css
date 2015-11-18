@@ -51,3 +51,7 @@ html {
 strong {
   font-weight: normal;
 }
+
+#nav-search {
+  background-color: white;
+}
