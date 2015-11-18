@@ -17,7 +17,11 @@ class Oil < ActiveRecord::Base
 
   def oil_image
     if name == "Avocado Oil"
-      img = "http://i.imgur.com/knvT3cG.png"
+      img = "http://i.imgur.com/mKdOCAX.jpg"
+    elsif name == "Coconut Oil"
+      img = "http://i.imgur.com/GbRqTze.jpg"
+    else
+      img = "http://i.imgur.com/aeO1MYa.jpg"
     end
   end
 
