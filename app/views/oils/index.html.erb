@@ -3,7 +3,7 @@
 <div class="categories">
   <div class="row">
     <% @oils.each do |oil| %>
-    <div class="col m4">
+    <div class="col m4" id="grayscale">
       <div class="card" id="<%=oil.slug%>">
         <div class="card-image">
           <img src="<%=oil.oil_index_image%>">
