@@ -6,7 +6,7 @@
     <li class="brand-logo"><a href="/"><img class="logo-image" src="http://i.imgur.com/tB4xEbZ.png"></a> </li>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down" style = "padding-right: 10px">
-      <!-- <li> <%#= link_to "Our Story" %> </li> -->
+      <li> <%= link_to "Our Story", about_path %> </li>
       <li> <%= link_to "Shop Our Chips", chips_path %> </li>
       <li> <%= link_to "Shop by Oil", oils_path%> </li>
       <% if current_user %>
@@ -20,7 +20,7 @@
       <li><i class="material-icons">shopping_cart</i></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
-      <!-- <li> <%#= link_to "Our Story" %> </li> -->
+      <li> <%= link_to "Our Story", about_path %> </li>
       <li> <%= link_to "Shop Our Chips", chips_path %> </li>
       <li> <%= link_to "Shop by Oil", oils_path%> </li>
       <% if current_user %>

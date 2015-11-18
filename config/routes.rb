@@ -13,10 +13,12 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :update]
  end
 
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
-  get "/dashboard", to: "users#show"
-  get "/cart", to: "cart_chips#index"
-  get "/:slug", to: "oils#show"
+  get '/about', to: 'pages#about'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+  get '/dashboard', to: 'users#show'
+  get '/cart', to: 'cart_chips#index'
+  get '/:slug', to: 'oils#show'
+  # get '/:slug', to: redirect('/oils/%{slug}'), as: "oil_name"
 end
