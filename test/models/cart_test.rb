@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class CartTest < ActiveSupport::TestCase
   test "a cart can be initialized without data" do

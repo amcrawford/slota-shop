@@ -1,9 +1,9 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
-require 'rails/test_help'
-require 'capybara/rails'
-require 'mocha/mini_test'
-require 'simplecov'
+require "rails/test_help"
+require "capybara/rails"
+require "mocha/mini_test"
+require "simplecov"
 
 SimpleCov.start("rails")
 
@@ -16,13 +16,18 @@ class ActiveSupport::TestCase
   def create_shop
     category_1 = Oil.create(name: "Lard")
     category_2 = Oil.create(name: "Coconut Oil")
-    Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
-    Chip.create(name: "Dang Coconut", price: 17, description: "Dang, these are good", oil_id: category_2.id)
-    Chip.create(name: "Old Chips", price: 20, description: "Super yummy", oil_id: category_1.id, status: "retired")
+    Chip.create(name: "Slotachips", price: 20,
+                description: "Super yummy", oil_id: category_1.id)
+    Chip.create(name: "Dang Coconut", price: 17,
+                description: "Dang, these are good", oil_id: category_2.id)
+    Chip.create(name: "Old Chips", price: 20,
+                description: "Super yummy", oil_id: category_1.id,
+                status: "retired")
   end
 
   def create_chip(name, price, description)
-    Chip.create(name: name, price: price, description: description)
+    Chip.create(name: name, price: price,
+                description: description)
   end
 
   def create_cart(chip)
@@ -44,7 +49,8 @@ class ActionDispatch::IntegrationTest
   end
 
   def create_chip(name, price, description)
-    Chip.create(name: name, price: price, description: description)
+    Chip.create(name: name, price: price,
+                description: description)
   end
 
   def create_user
@@ -63,7 +69,7 @@ class ActionDispatch::IntegrationTest
   end
 
   def login_user
-    visit '/'
+    visit "/"
     within(".right") do
       click_link "Login"
     end
@@ -73,7 +79,7 @@ class ActionDispatch::IntegrationTest
   end
 
   def login_admin
-    visit '/'
+    visit "/"
     within(".right") do
       click_link "Login"
     end
@@ -85,17 +91,23 @@ class ActionDispatch::IntegrationTest
   def create_shop
     category_1 = Oil.create(name: "Lard")
     category_2 = Oil.create(name: "Coconut Oil")
-    Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
-    Chip.create(name: "Dang Coconut", price: 17, description: "Dang, these are good", oil_id: category_2.id)
-    Chip.create(name: "Old Chips", price: 20, description: "Super yummy", oil_id: category_1.id, status: "retired")
+    Chip.create(name: "Slotachips", price: 20,
+                description: "Super yummy", oil_id: category_1.id)
+    Chip.create(name: "Dang Coconut", price: 17,
+                description: "Dang, these are good", oil_id: category_2.id)
+    Chip.create(name: "Old Chips", price: 20,
+                description: "Super yummy", oil_id: category_1.id,
+                status: "retired")
   end
 
   def create_shop_and_logged_in_user
     create_shop
     user = create_user
     order = user.orders.create(total_price: 20)
-    order.chip_orders.create(chip_id: Chip.all.first.id, quantity: 1, subtotal: 20)
-    order.chip_orders.create(chip_id: Chip.all.last.id, quantity: 1, subtotal: 20)
+    order.chip_orders.create(chip_id: Chip.all.first.id,
+                             quantity: 1, subtotal: 20)
+    order.chip_orders.create(chip_id: Chip.all.last.id,
+                             quantity: 1, subtotal: 20)
 
     login_user
 

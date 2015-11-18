@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class UserCanEditTheirAccountTest < ActionDispatch::IntegrationTest
   test "a user can edit their account" do

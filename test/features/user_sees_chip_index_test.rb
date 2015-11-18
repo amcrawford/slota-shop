@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class IndexViewTest < ActionDispatch::IntegrationTest
   test 'user does not see chip description on index page' do

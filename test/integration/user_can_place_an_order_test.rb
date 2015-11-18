@@ -1,14 +1,15 @@
-require 'test_helper'
+require "test_helper"
 
 class UserCanPlaceAnOrderTest < ActionDispatch::IntegrationTest
   test "registered user can place an order" do
     category_1 = Oil.create(name: "Lard")
 
-    item_1 = Chip.create(name: "Slotachips", price: 20, description: "Super yummy", oil_id: category_1.id)
+    Chip.create(name: "Slotachips", price: 20,
+                description: "Super yummy", oil_id: category_1.id)
 
-    user = User.create(username: "John", password: "Password")
+    User.create(username: "John", password: "Password")
 
-    visit '/'
+    visit "/"
 
     within(".right") do
       click_link "Login"
@@ -25,7 +26,7 @@ class UserCanPlaceAnOrderTest < ActionDispatch::IntegrationTest
       click_button "Add to Cart"
     end
 
-    visit '/cart'
+    visit "/cart"
     click_button "Place Order"
 
     assert_equal new_order_path, current_path
@@ -35,7 +36,7 @@ class UserCanPlaceAnOrderTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Order was successfully placed")
     assert page.has_content?("Cart (0)")
 
-    visit '/cart'
+    visit "/cart"
     click_button "Place Order"
     fill_in "Address", with: "1 Street"
     click_button "Checkout"

@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class OilTest < ActiveSupport::TestCase
   test "an oil type category can be created with valid attributes" do
@@ -16,7 +16,7 @@ class OilTest < ActiveSupport::TestCase
   end
 
   test "an oil type category can not be created without a unique name" do
-    oil1 = Oil.create(name: "Lard")
+    Oil.create(name: "Lard")
     oil2 = Oil.new(name: "Lard")
 
     assert oil2.invalid?

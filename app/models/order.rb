@@ -35,7 +35,6 @@ class Order < ActiveRecord::Base
   end
 
   def self.scope_action(scope)
-    # Order.send(scope.downcase)
     if scope == "Ordered"
       Order.ordered
     elsif scope == "Paid"
@@ -46,12 +45,4 @@ class Order < ActiveRecord::Base
       Order.completed
     end
   end
-
-  # def orders_by_status(scope)
-  #   if #something
-  #     Order.scope_action(scope).desc_by_date
-  #   else
-  #     #something else
-  #   end
-  # end
 end
