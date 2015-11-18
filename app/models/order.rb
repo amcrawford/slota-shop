@@ -45,6 +45,5 @@ class Order < ActiveRecord::Base
     else
       Order.completed
     end
-  end
-  
+  end 
 end

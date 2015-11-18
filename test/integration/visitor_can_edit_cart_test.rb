@@ -8,7 +8,8 @@ class VisitorCanEditCartTest < ActionDispatch::IntegrationTest
     Chip.create(name: "Slotachips", price: 20,
                 description: "Super yummy", oil_id: category_1.id)
     Chip.create(name: "Trader Joe's BBQ", price: 15,
-                description: "I'd trade slota for these!", oil_id: category_2.id)
+                description: "I'd trade slota for these!",
+                oil_id: category_2.id)
     Chip.create(name: "Dang Coconut", price: 17,
                 description: "Dang, these are good", oil_id: category_2.id)
     Chip.create(name: "Lard Yummies", price: 19,
@@ -45,7 +46,8 @@ class VisitorCanEditCartTest < ActionDispatch::IntegrationTest
     Chip.create(name: "Slotachips", price: 20.50,
                 description: "Super yummy", oil_id: category_1.id)
     Chip.create(name: "Trader Joe's BBQ", price: 15,
-                description: "I'd trade slota for these!", oil_id: category_2.id)
+                description: "I'd trade slota for these!",
+                oil_id: category_2.id)
     Chip.create(name: "Dang Coconut", price: 17,
                 description: "Dang, these are good", oil_id: category_2.id)
     Chip.create(name: "Lard Yummies", price: 19,
