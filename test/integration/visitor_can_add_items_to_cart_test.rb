@@ -87,10 +87,6 @@ class VisitorCanAddItemsToCartTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Total: $39")
   end
 
-  test "can add chip to cart from chip show" do
-    skip
-  end
-
   test "can add item to cart from category show pages" do
     category_1 = Oil.create(name: "Lard")
     category_2 = Oil.create(name: "Coconut Oil")
