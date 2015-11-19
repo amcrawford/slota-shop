@@ -7,7 +7,7 @@ class NotificationsController < ApplicationController
   def self.notify(total)
     client = Twilio::REST::Client.new ENV["SID"], ENV["PIN"]
     client.messages.create from: ENV["PHONE"], to: ENV["WOW"],
-                           body: "Thanks for your order you're total is #{total}"
+                           body: "Thanks for your order your total is #{total}"
   end
 
   def self.call
