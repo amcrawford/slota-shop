@@ -6,7 +6,7 @@ class Order < ActiveRecord::Base
   scope :ordered,       -> { where status: 'Ordered' }
   scope :paid,          -> { where status: 'Paid' }
   scope :cancelled,     -> { where status: 'Cancelled' }
-  scope :completed,     -> { where status: 'Complete' }
+  scope :completed,     -> { where status: 'Completed' }
   scope :desc_by_date,  -> { order(id: :desc) }
 
   def update_links
@@ -41,6 +41,8 @@ class Order < ActiveRecord::Base
       Order.paid
     elsif scope == "Cancelled"
       Order.cancelled
+    elsif scope == "Completed"
+      Order.completed
     else
       Order.completed
     end

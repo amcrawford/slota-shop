@@ -85,7 +85,7 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
 
     create_admin
     login_admin
-
+  
     assert page.has_content?("Total Orders: 7")
     assert page.has_content?("Ordered (3)")
     assert page.has_content?("Paid (1)")
