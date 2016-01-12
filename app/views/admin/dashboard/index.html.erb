@@ -4,7 +4,7 @@ Total Orders: <%= @orders.all.count %><br />
 <%= link_to "Ordered", admin_orders_path(scope: "Ordered") %> (<%= @orders.ordered.count %>) |
 <%= link_to "Paid", admin_orders_path(scope: "Paid") %> (<%= @orders.paid.count %>) |
 <%= link_to "Cancelled", admin_orders_path(scope: "Cancelled") %> (<%= @orders.cancelled.count %>) |
-<%= link_to "Completed", admin_orders_path(scope: "Completed") %> (<%= @orders.completed.count %>)<br /><br />
+<%= link_to "Complete", admin_orders_path(scope: "Complete") %> (<%= @orders.complete.count %>)<br /><br />
 
 <table class="striped">
   <thead>

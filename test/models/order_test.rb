@@ -35,7 +35,7 @@ class OrderTest < ActiveSupport::TestCase
     expected = []
     assert_equal expected, order.update_links
 
-    order.status = "Completed"
+    order.status = "Complete"
     expected = []
     assert_equal expected, order.update_links
   end

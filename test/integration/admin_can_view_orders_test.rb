@@ -36,7 +36,7 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
     order1 = create_order("Ordered", 5, user.id)
     order2 = create_order("Paid", 6, user.id)
     order3 = create_order("Cancelled", 7, user.id)
-    order4 = create_order("Completed", 8, user.id)
+    order4 = create_order("Complete", 8, user.id)
 
     create_admin
     login_admin
@@ -67,7 +67,7 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
 
     within("#order-#{order4.id}") do
       assert page.has_content?("#{order4.id}")
-      assert page.has_content?("Completed")
+      assert page.has_content?("Complete")
       refute page.has_button?("mark as paid")
       refute page.has_button?("mark as complete")
       refute page.has_button?("cancel")
@@ -81,7 +81,7 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
     order4 = create_order("Paid", 6, 2)
     order5 = create_order("Cancelled", 7, 3)
     order6 = create_order("Cancelled", 7, 3)
-    order7 = create_order("Completed", 8, 4)
+    order7 = create_order("Complete", 8, 4)
 
     create_admin
     login_admin
@@ -90,7 +90,7 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Ordered (3)")
     assert page.has_content?("Paid (1)")
     assert page.has_content?("Cancelled (2)")
-    assert page.has_content?("Completed (1)")
+    assert page.has_content?("Complete (1)")
 
     click_link "Ordered"
     assert page.has_content?("Order #{order1.id}")
@@ -119,7 +119,7 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Order #{order6.id}")
     refute page.has_content?("Order #{order7.id}")
 
-    click_link "Completed"
+    click_link "Complete"
     refute page.has_content?("Order #{order1.id}")
     refute page.has_content?("Order #{order2.id}")
     refute page.has_content?("Order #{order3.id}")
@@ -204,7 +204,7 @@ class AdminCanViewOrdersTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "admin can mark a 'paid' order as 'completed'" do
+  test "admin can mark a 'paid' order as 'complete'" do
     user = create_user
     order1 = create_order("Paid", 5, user.id)
 
