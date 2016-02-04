@@ -2,13 +2,14 @@
 
 ![screenshot](http://g.recordit.co/35V3gsf6dK.gif)
 
-E-Commerce Project:
-  - Created online chip store with user and administrative login, authentication and cart capabilities.
-  - Incorporated Twilio to confirm user purchases via text.
-  
-Stack: Rails, Ruby, MaterializeCSS, Twilio, Minitest
+### Slota's Chips
 
-Live Application Can be Found here: http://slota-chips.herokuapp.com/
+* E-Commerce App featuring customer and administrative login as well as basic cart functionality incorporating Twilio text * confirmation
+* Individually responsible for overall UI/UX as well as user authentication, administrative panel, and testing for those features while also pairing on database design
+  
+STACK: Rails, Ruby, MaterializeCSS, Twilio, Minitest
+
+LINK: http://slota-chips.herokuapp.com/
 
 
 
