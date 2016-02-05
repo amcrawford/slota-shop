@@ -1,4 +1,0 @@
-== README
-
-Heroku App link: young-harbor-1645.herokuapp.com
-
